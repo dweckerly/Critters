@@ -1,0 +1,43 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b8160b753800af248951b051d1a0af14, type: 3}
+  m_Name: Carnipula
+  m_EditorClassIdentifier: 
+  prefab: {fileID: 3350358810986010545, guid: adc663ebf79215b44975d2aa34f72d73, type: 3}
+  critterName: Carnipula
+  type: 2
+  size: 0
+  speed: 5
+  health: 5
+  atkDamage: 1
+  atkSpeed: 3
+  dropItem: {fileID: 4089027362549001213, guid: 52536898ef65a694fbaaa210f962287d,
+    type: 3}
+  activeTimes: 0000000001000000
+  critterInteractions:
+  - interactableTag: 3
+    inducedState: 2
+    behaviour: {fileID: 0}
+  - interactableTag: 2
+    inducedState: 1
+    behaviour: {fileID: 0}
+  - interactableTag: 1
+    inducedState: 2
+    behaviour: {fileID: 0}
+  defaultNormalBehaviour: {fileID: 8777040767825448462, guid: 22c3f63114d5c944eba16d771b16735b,
+    type: 3}
+  defaultThreatenedBehaviour: {fileID: 1102716177779491520, guid: 22c3f63114d5c944eba16d771b16735b,
+    type: 3}
+  defaultInteractBehaviour: {fileID: 3526239116512407378, guid: 22c3f63114d5c944eba16d771b16735b,
+    type: 3}
+  defaultSleepBehaviour: {fileID: 6057808325782301101, guid: 22c3f63114d5c944eba16d771b16735b,
+    type: 3}

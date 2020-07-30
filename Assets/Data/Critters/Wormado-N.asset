@@ -1,0 +1,41 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b8160b753800af248951b051d1a0af14, type: 3}
+  m_Name: Wormado-N
+  m_EditorClassIdentifier: 
+  prefab: {fileID: 5606349774447441510, guid: d4293f43ebc1eef48ad82823d053676f, type: 3}
+  critterName: Wormado
+  type: 1
+  size: 0
+  speed: 4
+  health: 3
+  atkDamage: 0
+  atkSpeed: 2
+  dropItem: {fileID: 1924121725090084830, guid: ad41e411ea903ef4695f63fe28bf34ef,
+    type: 3}
+  activeTimes: 0000000002000000
+  critterInteractions:
+  - interactableTag: 1
+    inducedState: 2
+    behaviour: {fileID: 0}
+  - interactableTag: 0
+    inducedState: 1
+    behaviour: {fileID: -385866162970652931, guid: 22c3f63114d5c944eba16d771b16735b,
+      type: 3}
+  defaultNormalBehaviour: {fileID: 8777040767825448462, guid: 22c3f63114d5c944eba16d771b16735b,
+    type: 3}
+  defaultThreatenedBehaviour: {fileID: 5949815602845411733, guid: 22c3f63114d5c944eba16d771b16735b,
+    type: 3}
+  defaultInteractBehaviour: {fileID: 3526239116512407378, guid: 22c3f63114d5c944eba16d771b16735b,
+    type: 3}
+  defaultSleepBehaviour: {fileID: 6057808325782301101, guid: 22c3f63114d5c944eba16d771b16735b,
+    type: 3}

@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c9d14659d7bbecf489f7a10f9c3109f1, type: 3}
+  m_Name: Pot
+  m_EditorClassIdentifier: 
+  itemName: Pot
+  description: A clay pot suitable for small plants.
+  image: {fileID: 21300000, guid: 51afcb93d6d686e4ea405380ef65104c, type: 3}
+  stackAmount: 5
+  singleUse: 1
+  weight: 2
+  prefab: {fileID: 2540933767432904652, guid: e51c0dd0fb24a064e8af87160572e8f1, type: 3}
+  equip: {fileID: 2588147085088107592, guid: f63cebff623080d4f9867b85375aae5b, type: 3}

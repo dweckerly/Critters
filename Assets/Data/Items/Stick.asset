@@ -1,0 +1,25 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c9d14659d7bbecf489f7a10f9c3109f1, type: 3}
+  m_Name: Stick
+  m_EditorClassIdentifier: 
+  id: 
+  prefab: {fileID: 1072402268981716503, guid: 458dfcc1fc1fa6d468faeaae54a5ed71, type: 3}
+  itemName: Stick
+  description: A nice, sturdy stick. You can wack things with it.
+  image: {fileID: 21300000, guid: 8cf0a90fe7e85d1488b9fb738afb44c2, type: 3}
+  stackAmount: 3
+  singleUse: 0
+  weight: 1
+  itemEffect: {fileID: 0}
+  equip: {fileID: 7452304344354713977, guid: 9db2f8b55cf10d740b216403845bb90b, type: 3}
+  critter: {fileID: 0}

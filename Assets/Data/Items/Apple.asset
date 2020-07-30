@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c9d14659d7bbecf489f7a10f9c3109f1, type: 3}
+  m_Name: Apple
+  m_EditorClassIdentifier: 
+  itemName: Apple
+  description: Juicy and delicious, many critters will come a runnin' to eat one
+    of these babies.
+  image: {fileID: 21300000, guid: ee51164b97e36b44bb0f024989dcfbd4, type: 3}
+  singleUse: 1
+  weight: 1
+  prefab: {fileID: 3468000803343008386, guid: 638dd07bf9724424b87aaa7f9cd45392, type: 3}
+  equip: {fileID: 6811739359553668780, guid: d6445ee5b59be8c42862acf5d08247cb, type: 3}

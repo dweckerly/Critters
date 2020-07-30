@@ -1,0 +1,25 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c9d14659d7bbecf489f7a10f9c3109f1, type: 3}
+  m_Name: Meat-Small
+  m_EditorClassIdentifier: 
+  id: 
+  prefab: {fileID: 4089027362549001213, guid: 52536898ef65a694fbaaa210f962287d, type: 3}
+  itemName: Small Meat
+  description: A tiny cut of critter meat. Good eatin'!
+  image: {fileID: 21300000, guid: 8bbeeb15576dada4f85003c1612386ed, type: 3}
+  stackAmount: 10
+  singleUse: 1
+  weight: 1
+  itemEffect: {fileID: 0}
+  equip: {fileID: 0}
+  critter: {fileID: 0}

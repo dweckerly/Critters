@@ -1,0 +1,30 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 61b1f34498928344eaeb999820ee45ed, type: 3}
+  m_Name: Sample
+  m_EditorClassIdentifier: 
+  locationName: Sample
+  critterSpawnChances:
+  - critter: {fileID: 1537397748219324872, guid: ff11ba3446b6a50479c4ecf934c16485,
+      type: 3}
+    chance: 0.5
+  - critter: {fileID: 7408027477610424260, guid: d4293f43ebc1eef48ad82823d053676f,
+      type: 3}
+    chance: 0.5
+  - critter: {fileID: 4658855644676330876, guid: adc663ebf79215b44975d2aa34f72d73,
+      type: 3}
+    chance: 0.5
+  - critter: {fileID: 5902476724350573478, guid: 78cfd0775d9831d4daf01e29c34f076b,
+      type: 3}
+    chance: 0.5
+  minCritters: 6
+  maxCritters: 0
