@@ -22,7 +22,10 @@ public class ThrownHeldItem : HeldItem
     {
         Vector3 spawnPoint = projectilePosition.position;
         GameObject projectile = Instantiate(data.prefab, spawnPoint + (hia.transform.forward * 2), hia.transform.rotation);
-        projectile.GetComponent<Rigidbody>().AddForce(((transform.up * arcHeight) + hia.transform.forward) * speed);
+        Rigidbody rb = projectile.GetComponent<Rigidbody>();
+        rb.AddForce(((transform.up * arcHeight) + hia.transform.forward) * speed);
+        float torque = Random.Range(100, 100);
+        rb.AddTorque(transform.forward * torque);
         SingleUseItemCheck();
     }
 
