@@ -7,7 +7,7 @@ public class PlayerInput : MonoBehaviour
 
     public bool detectNumericInput = true;
 
-    public MouseInput mouse = new MouseInput();
+    public MouseInput mouse;
 
     private KeyCode[] heldItemKeyCodes = {
         KeyCode.Alpha1,
@@ -20,6 +20,7 @@ public class PlayerInput : MonoBehaviour
     private void Awake()
     {
         Cursor.lockState = CursorLockMode.Locked;
+        mouse = new MouseInput(cameraController);
     }
 
     public Vector2 WASDInput()

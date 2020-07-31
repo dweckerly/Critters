@@ -9,6 +9,13 @@ public class MouseInput
     public bool detectRightClick = true;
     public bool detectScrollWheel = true;
 
+    CameraController cc;
+
+    public MouseInput(CameraController _cc)
+    {
+        cc = _cc;
+    }
+
     public Vector2 MouseMove()
     {
         return new Vector2(Input.GetAxis("Mouse X"), Input.GetAxis("Mouse Y")) * mouseSensitivity * Time.deltaTime;
@@ -50,7 +57,29 @@ public class MouseInput
         return 0f;
     }
 
+    public void EnableCameraLook()
+    {
+        cc.enabled = true;
+    }
+
+    public void DisableCameraLook()
+    {
+        cc.enabled = false;
+    }
+
     public void EnableMouse()
+    {
+        EnableCameraLook();
+        EnableMouseClickAndScroll();
+    }
+
+    public void DisableMouse()
+    {
+        DisableCameraLook();
+        DisableMouseClickAndScroll();
+    }
+
+    public void EnableMouseClickAndScroll()
     {
         detectLeftClick = true;
         detectLeftRelease = true;
@@ -58,7 +87,7 @@ public class MouseInput
         detectScrollWheel = true;
     }
 
-    public void DisableMouse()
+    public void DisableMouseClickAndScroll()
     {
         detectLeftClick = false;
         detectLeftRelease = false;

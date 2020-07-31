@@ -68,7 +68,7 @@ public class HeldItemAction : MonoBehaviour
     public void SwapItem(float sw, int index = -1)
     {
         player.playerInput.detectNumericInput = false;
-        player.playerInput.mouse.DisableMouse();
+        player.playerInput.mouse.DisableMouseClickAndScroll();
         StartCoroutine(SwapOutHeldItem(sw, index));
     }
 
@@ -111,7 +111,7 @@ public class HeldItemAction : MonoBehaviour
 
     IEnumerator SwapInHeldItem()
     {
-        player.playerInput.mouse.EnableMouse();
+        player.playerInput.mouse.EnableMouseClickAndScroll();
         player.playerInput.detectNumericInput = true;
         yield return new WaitForSeconds(heldItems[currentIndex].SwapIn());
     }
