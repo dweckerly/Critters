@@ -38,21 +38,21 @@ public class HeldItemAction : MonoBehaviour
 
     void Update()
     {
-        if (player.playerInput.MouseLeftClick())
+        if (player.playerInput.mouse.LeftClick())
         {
             heldItems[currentIndex].ClickAction();
-            player.playerInput.detectLeftClick = false;
+            player.playerInput.mouse.detectLeftClick = false;
             StartCoroutine(ClickCoolDown());
         }
 
-        if (player.playerInput.MouseLeftClickRelease())
+        if (player.playerInput.mouse.LeftClickRelease())
         {
             heldItems[currentIndex].UnClickAction();
         }
 
         if (heldItems.Count > 1)
         {
-            float sw = player.playerInput.ScrollWheelInput();
+            float sw = player.playerInput.mouse.ScrollWheelInput();
             if (sw != 0)
             {
                 SwapItem(sw);
@@ -68,7 +68,7 @@ public class HeldItemAction : MonoBehaviour
     public void SwapItem(float sw, int index = -1)
     {
         player.playerInput.detectNumericInput = false;
-        player.playerInput.DisableMouseClickAndScroll();
+        player.playerInput.mouse.DisableMouse();
         StartCoroutine(SwapOutHeldItem(sw, index));
     }
 
@@ -111,7 +111,7 @@ public class HeldItemAction : MonoBehaviour
 
     IEnumerator SwapInHeldItem()
     {
-        player.playerInput.EnableMouseClickAndScroll();
+        player.playerInput.mouse.EnableMouse();
         player.playerInput.detectNumericInput = true;
         yield return new WaitForSeconds(heldItems[currentIndex].SwapIn());
     }
@@ -119,6 +119,6 @@ public class HeldItemAction : MonoBehaviour
     IEnumerator ClickCoolDown()
     {
         yield return new WaitForSeconds(clickCoolDown);
-        player.playerInput.detectLeftClick = true;
+        player.playerInput.mouse.detectLeftClick = true;
     }
 }

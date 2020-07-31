@@ -39,7 +39,7 @@ public class InventoryManager : MonoBehaviour
         inventoryPanel.SetActive(true);
         player.playerInput.DisableCameraLook();
         player.playerInput.DisablePlayerMovement();
-        player.playerInput.DisableMouseClickAndScroll();
+        player.playerInput.mouse.DisableMouse();
         Cursor.lockState = CursorLockMode.None;
     }
 
@@ -47,7 +47,7 @@ public class InventoryManager : MonoBehaviour
     {
         player.playerInput.EnableCameraLook();
         player.playerInput.EnablePlayerMovement();
-        player.playerInput.EnableMouseClickAndScroll();
+        player.playerInput.mouse.EnableMouse();
         Cursor.lockState = CursorLockMode.Locked;
         inventoryPanel.SetActive(false);
     }

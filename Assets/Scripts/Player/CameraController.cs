@@ -7,7 +7,7 @@ public class CameraController : MonoBehaviour
 
     void LateUpdate()
     {
-        Vector2 mouse = player.playerInput.MouseMoveInput();
+        Vector2 mouse = player.playerInput.mouse.MouseMove();
         float mouseX = mouse.x;
         float mouseY = mouse.y;
 

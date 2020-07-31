@@ -1,19 +1,13 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class PlayerInput : MonoBehaviour
 {
     public PlayerMovement playerMovement;
     public CameraController cameraController;
 
-    public float mouseSensitivity = 100f;
-
-    public bool detectLeftClick = true;
-    public bool detectLeftRelease = true;
-    public bool detectScrollWheel = true;
-
     public bool detectNumericInput = true;
+
+    public MouseInput mouse = new MouseInput();
 
     private KeyCode[] heldItemKeyCodes = {
         KeyCode.Alpha1,
@@ -31,11 +25,6 @@ public class PlayerInput : MonoBehaviour
     public Vector2 WASDInput()
     {
         return new Vector2(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical"));
-    }
-
-    public Vector2 MouseMoveInput()
-    {
-        return new Vector2(Input.GetAxis("Mouse X"), Input.GetAxis("Mouse Y")) * mouseSensitivity * Time.deltaTime;
     }
 
     public bool SneakInput()
@@ -83,31 +72,6 @@ public class PlayerInput : MonoBehaviour
         return -1;
     }
 
-    public bool MouseLeftClick()
-    {
-        if(detectLeftClick)
-        {
-            return Input.GetMouseButtonDown(0);
-        }
-        return false;
-    }
-
-    public bool MouseLeftClickRelease()
-    {
-        if(detectLeftRelease)
-        {
-            return Input.GetMouseButtonUp(0);
-        }
-        return false;
-    }
-
-    public float ScrollWheelInput()
-    {
-        if(detectScrollWheel) {
-            return Input.GetAxis("Mouse ScrollWheel");
-        }
-        return 0f;
-    }
     public void EnablePlayerMovement()
     {
         playerMovement.enabled = true;
@@ -126,19 +90,5 @@ public class PlayerInput : MonoBehaviour
     public void DisableCameraLook()
     {
         cameraController.enabled = false;
-    }
-
-    public void EnableMouseClickAndScroll()
-    {
-        detectLeftClick = true;
-        detectLeftRelease = true;
-        detectScrollWheel = true;
-    }
-
-    public void DisableMouseClickAndScroll()
-    {
-        detectLeftClick = false;
-        detectLeftRelease = false;
-        detectScrollWheel = false;
     }
 }
