@@ -1,18 +1,10 @@
 ﻿using UnityEngine;
 
-public class Stick : HeldItem
+public class Stick : MeleeItem
 {
     int damage = 1;
 
-    public AnimationClip use;
-
-    protected override void OnEnable()
-    {
-        hia.clickCoolDown = use.length;
-        range = 2f;
-    }
-
-    public override void ClickAction()
+    public override void LeftClickAction()
     {
         animator.SetTrigger("use");
         Critter critter = CheckForCritter();
@@ -20,10 +12,5 @@ public class Stick : HeldItem
         {
             critter.critterHealth.TakeDamage(damage, Interactables.Player);
         }
-    }
-
-    public override void UnClickAction()
-    {
-        return;
     }
 }

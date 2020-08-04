@@ -6,7 +6,7 @@ public class HeldItemsUIManager : MonoBehaviour
     public List<HeldItemUIObject> heldItemUIObjects;
     public Inventory inventory;
 
-    public void PopulateHeldItemsPanel(List<HeldItem> heldItems)
+    public void PopulateHeldItemsPanel(List<Item> heldItems)
     {
         for (int i = 0; i < heldItemUIObjects.Count; i++)
         {

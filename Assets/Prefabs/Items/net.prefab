@@ -12,7 +12,8 @@ GameObject:
   - component: {fileID: 1506242103870211950}
   - component: {fileID: 5213063437167012516}
   - component: {fileID: 4186181062016672319}
-  - component: {fileID: 8904488615335310213}
+  - component: {fileID: -7865845490003100729}
+  - component: {fileID: 6198899814161126720}
   m_Layer: 0
   m_Name: net
   m_TagString: Item
@@ -114,7 +115,26 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!114 &8904488615335310213
+--- !u!95 &-7865845490003100729
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 477386822487836844}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 0}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &6198899814161126720
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -123,8 +143,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 477386822487836844}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c7655a86e8d2df3419e24f05d3c5398f, type: 3}
+  m_Script: {fileID: 11500000, guid: da6cfad80c07af848abda3dbdb00508d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   data: {fileID: 11400000, guid: ec6e8cd60cf0043429f035b0e9748a11, type: 2}
   itemEffect: {fileID: 0}
+  animator: {fileID: 0}
+  hia: {fileID: 0}

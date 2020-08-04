@@ -12,7 +12,8 @@ GameObject:
   - component: {fileID: 5033534399590279340}
   - component: {fileID: 317403488964727420}
   - component: {fileID: 6352919781429145496}
-  - component: {fileID: 3286414230095001983}
+  - component: {fileID: -8725831499027808976}
+  - component: {fileID: -3312132214597407720}
   m_Layer: 0
   m_Name: stick
   m_TagString: Item
@@ -114,7 +115,26 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!114 &3286414230095001983
+--- !u!95 &-8725831499027808976
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1072402268981716503}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 0}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &-3312132214597407720
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -123,8 +143,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 1072402268981716503}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c7655a86e8d2df3419e24f05d3c5398f, type: 3}
+  m_Script: {fileID: 11500000, guid: e7ff70490fd92c04d844d1278ea81b80, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   data: {fileID: 11400000, guid: 4930b2974c892c14dbc183ccec07c0b2, type: 2}
   itemEffect: {fileID: 0}
+  animator: {fileID: 0}
+  hia: {fileID: 0}

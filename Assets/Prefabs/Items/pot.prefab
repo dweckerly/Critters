@@ -12,7 +12,8 @@ GameObject:
   - component: {fileID: 8192185852302020645}
   - component: {fileID: 1319962692745194558}
   - component: {fileID: 8071885918061015697}
-  - component: {fileID: 7213412263552100024}
+  - component: {fileID: -5958102338095026998}
+  - component: {fileID: 3961866366300160379}
   m_Layer: 0
   m_Name: pot
   m_TagString: Item
@@ -114,7 +115,26 @@ CapsuleCollider:
   m_Height: 3
   m_Direction: 1
   m_Center: {x: 0, y: -0.12, z: 0}
---- !u!114 &7213412263552100024
+--- !u!95 &-5958102338095026998
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2540933767432904652}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 0}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &3961866366300160379
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -123,8 +143,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 2540933767432904652}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c7655a86e8d2df3419e24f05d3c5398f, type: 3}
+  m_Script: {fileID: 11500000, guid: da6cfad80c07af848abda3dbdb00508d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   data: {fileID: 11400000, guid: 4c309d4a69069e748bf27aa90cc7c117, type: 2}
   itemEffect: {fileID: 0}
+  animator: {fileID: 0}
+  hia: {fileID: 0}

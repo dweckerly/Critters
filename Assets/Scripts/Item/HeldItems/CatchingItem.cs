@@ -1,22 +1,14 @@
 ﻿using UnityEngine;
 
-public abstract class CatchingItem : HeldItem
+public class CatchingItem : MeleeItem
 {
-    public AnimationClip use;
-    public ParticleSystem catchPS;
-
-    protected CritterType critterCatchType;
-    protected CritterSize critterCatchSize;
-
-    public Item containerItem;
-
-    public override void ClickAction()
+    public override void LeftClickAction()
     {
         animator.SetTrigger("use");
         Critter critter = CheckForCritter();
         if(critter != null)
         {
-            if ((critter.data.type == critterCatchType || critterCatchType == CritterType.Any) && critter.data.size <= critterCatchSize)
+            if ((critter.data.type == data.critterCatchType || data.critterCatchType == CritterType.Any) && critter.data.size <= data.critterCatchSize)
             {
                 Catch(critter);
             }
@@ -33,7 +25,7 @@ public abstract class CatchingItem : HeldItem
         {
             SingleUseItemCheck();
             hia.player.messageSystem.AddMessage("You caught a wild " + critter.data.critterName + "!");
-            Instantiate(catchPS, critter.gameObject.transform.position, Quaternion.identity);
+            Instantiate(data.catchPS, critter.gameObject.transform.position, Quaternion.identity);
             Destroy(critter.gameObject);
         }
         else

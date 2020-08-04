@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using UnityEditor.Animations;
+using UnityEngine;
 
 [CreateAssetMenu(fileName = "ItemData", menuName = "ScriptableObjects/ItemData", order = 3)]
 public class ItemData : ScriptableObject
@@ -10,5 +11,24 @@ public class ItemData : ScriptableObject
     public bool singleUse;
     public int weight;
     public GameObject prefab;
-    public GameObject equip;
+    public ItemEffect itemEffect;
+
+    public float range;
+    public AnimatorController animatorController;
+    public AnimationClip swapOut;
+    public AnimationClip swapIn;
+    public AnimationClip use;
+
+
+    public ParticleSystem catchPS;
+    public CritterType critterCatchType;
+    public CritterSize critterCatchSize;
+
+    private void Awake()
+    {
+        if(itemEffect != null)
+        {
+            itemEffect.item = prefab.GetComponent<Item>();
+        }
+    }
 }

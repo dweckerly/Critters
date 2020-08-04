@@ -1,24 +1,33 @@
 ﻿using UnityEngine;
 
-public class Hand : HeldItem
+public class Hand : MeleeItem
 {
     public Texture[] textures;
     public Renderer rend;
 
-    protected override void OnEnable()
+    protected override void Initialize()
     {
         if (hia != null)
         {
             hia.clickCoolDown = 0.2f;
         }
-        range = 2f;
     }
 
-    public override void ClickAction()
+    public override void LeftClickAction()
     {
         rend.material.mainTexture = textures[1];
         PickUpItem();
         PetCritter();
+    }
+
+    public override void UnClickAction()
+    {
+        rend.material.mainTexture = textures[0];
+    }
+
+    public override void RightClickAction()
+    {
+        return;
     }
 
     void PickUpItem()
@@ -26,6 +35,7 @@ public class Hand : HeldItem
         Item item = CheckForItem();
         if (item != null)
         {
+            Debug.Log(item.gameObject.name);
             if(hia.player.inventory.AddItem(item))
             {
                 hia.player.messageSystem.AddMessage("Picked up one " + item.data.itemName + ".");
@@ -34,8 +44,7 @@ public class Hand : HeldItem
             else
             {
                 hia.player.messageSystem.AddMessage("Inventory is full.");
-            }
-            
+            }   
         }
     }
 
@@ -46,10 +55,5 @@ public class Hand : HeldItem
         {
             hia.player.messageSystem.AddMessage("The wild " + critter.data.critterName + " doesn't like being touched...");
         }
-    }
-
-    public override void UnClickAction()
-    {
-        rend.material.mainTexture = textures[0];
     }
 }

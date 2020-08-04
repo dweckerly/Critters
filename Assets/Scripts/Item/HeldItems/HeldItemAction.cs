@@ -6,7 +6,7 @@ public class HeldItemAction : MonoBehaviour
 {
     public PlayerInterface player;
     public HeldItemsUIManager heldItemsUIManager;
-    public List<HeldItem> heldItems;
+    public List<Item> heldItems;
     int currentIndex;
 
     public float clickCoolDown;
@@ -40,9 +40,16 @@ public class HeldItemAction : MonoBehaviour
     {
         if (player.playerInput.mouse.LeftClick())
         {
-            heldItems[currentIndex].ClickAction();
+            heldItems[currentIndex].LeftClickAction();
+            player.playerInput.detectNumericInput = false;
             player.playerInput.mouse.detectLeftClick = false;
+            player.playerInput.mouse.detectRightClick = false;
             StartCoroutine(ClickCoolDown());
+        }
+
+        if (player.playerInput.mouse.RightClick())
+        {
+            heldItems[currentIndex].RightClickAction();
         }
 
         if (player.playerInput.mouse.LeftClickRelease())
@@ -119,6 +126,8 @@ public class HeldItemAction : MonoBehaviour
     IEnumerator ClickCoolDown()
     {
         yield return new WaitForSeconds(clickCoolDown);
+        player.playerInput.detectNumericInput = true;
         player.playerInput.mouse.detectLeftClick = true;
+        player.playerInput.mouse.detectRightClick = true;
     }
 }

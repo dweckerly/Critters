@@ -15,8 +15,15 @@ MonoBehaviour:
   itemName: Pot
   description: A clay pot suitable for small plants.
   image: {fileID: 21300000, guid: 51afcb93d6d686e4ea405380ef65104c, type: 3}
-  stackAmount: 5
   singleUse: 1
   weight: 2
   prefab: {fileID: 2540933767432904652, guid: e51c0dd0fb24a064e8af87160572e8f1, type: 3}
-  equip: {fileID: 2588147085088107592, guid: f63cebff623080d4f9867b85375aae5b, type: 3}
+  itemEffect: {fileID: 0}
+  range: 1.5
+  animatorController: {fileID: 9100000, guid: 6629ff0783f46984d95e8b514930b08e, type: 2}
+  swapOut: {fileID: 7400000, guid: 764b677be6007ed429f326eefc0eb0a6, type: 2}
+  swapIn: {fileID: 7400000, guid: 1e82a264a7f3f194690682a9121d59c2, type: 2}
+  use: {fileID: 7400000, guid: 88ff1cc23e969874797b9096ab8140aa, type: 2}
+  catchPS: {fileID: 1484070114201569825, guid: c62ca33348963fc4c8724bb6813e105c, type: 3}
+  critterCatchType: 0
+  critterCatchSize: 0

@@ -107,30 +107,27 @@ public class InventoryManager : MonoBehaviour
 
     void EnableItemButtons()
     {
-        Text equipText = equipButton.GetComponentInChildren<Text>();
-        equipText.text = "EQUIP";
+        if(selectedItem != null)
+        {
+            Text equipText = equipButton.GetComponentInChildren<Text>();
+            equipText.text = "EQUIP";
 
-        if (selectedItem.itemEffect != null)
-        {
-            useButton.interactable = true;
-        }
-        else
-        {
-            useButton.interactable = false;
-        }
-        if (selectedItem.data.equip != null)
-        {
+            if (selectedItem.itemEffect != null)
+            {
+                useButton.interactable = true;
+            }
+            else
+            {
+                useButton.interactable = false;
+            }
             equipButton.interactable = true;
-            if(IsItemEquipped(selectedItem) > -1)
+            if (IsItemEquipped(selectedItem) > -1)
             {
                 equipText.text = "UNEQUIP";
             }
-        }
-        else
-        {
             equipButton.interactable = false;
+            dropButton.interactable = true;
         }
-        dropButton.interactable = true;
     }
 
     void DisableItemButtons()
@@ -177,11 +174,7 @@ public class InventoryManager : MonoBehaviour
     public void RemoveItem(InventoryItem item)
     {
         inventory.RemoveItem(item);
-        if (item.data.singleUse && item.data.equip != null)
-        {
-            player.playerHeldItems.heldItemsUIManager.DecrementItemAmount(item);
-        }
-        
+        player.playerHeldItems.heldItemsUIManager.DecrementItemAmount(item);
         int itemEquip = IsItemEquipped(item);
         if (itemEquip > -1 && ItemIsLastInInventory(item))
         {
@@ -209,9 +202,9 @@ public class InventoryManager : MonoBehaviour
         Text equipText = equipButton.GetComponentInChildren<Text>();
         equipText.text = "UNEQUIP";
 
-        GameObject newEquip = Instantiate(selectedItem.data.equip, player.playerHeldItems.gameObject.transform);
-        player.playerHeldItems.heldItems.Add(newEquip.GetComponent<HeldItem>());
-        newEquip.GetComponent<HeldItem>().hia = player.playerHeldItems;
+        GameObject newEquip = Instantiate(selectedItem.data.prefab, player.playerHeldItems.gameObject.transform);
+        player.playerHeldItems.heldItems.Add(newEquip.GetComponent<Item>());
+        newEquip.GetComponent<Item>().hia = player.playerHeldItems;
         newEquip.SetActive(false);
         player.playerHeldItems.heldItemsUIManager.PopulateHeldItemsPanel(player.playerHeldItems.heldItems);
     }

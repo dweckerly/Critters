@@ -18,4 +18,12 @@ MonoBehaviour:
   singleUse: 0
   weight: 1
   prefab: {fileID: 1929789920328210960, guid: 4320ca4a92653b14e82b8b42e792927c, type: 3}
-  equip: {fileID: 0}
+  itemEffect: {fileID: 0}
+  range: 0
+  animatorController: {fileID: 9100000, guid: 77465e3aef576794b978df36549d9f94, type: 2}
+  swapOut: {fileID: 7400000, guid: bbc98362460ffeb4f9377b818f79bac2, type: 2}
+  swapIn: {fileID: 7400000, guid: fd4da1b32c232734d94d170ed202236a, type: 2}
+  use: {fileID: 0}
+  catchPS: {fileID: 0}
+  critterCatchType: 0
+  critterCatchSize: 0

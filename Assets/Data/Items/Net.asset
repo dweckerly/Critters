@@ -12,14 +12,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c9d14659d7bbecf489f7a10f9c3109f1, type: 3}
   m_Name: Net
   m_EditorClassIdentifier: 
-  id: 
-  prefab: {fileID: 477386822487836844, guid: c2233bd2c7edbc04b930cee22c452527, type: 3}
   itemName: Net
   description: A simple net used for catching small bug critters.
   image: {fileID: 21300000, guid: f2ae9e736ad5afc4d8a70c233b8d9a5d, type: 3}
-  stackAmount: 1
   singleUse: 0
   weight: 3
+  prefab: {fileID: 477386822487836844, guid: c2233bd2c7edbc04b930cee22c452527, type: 3}
   itemEffect: {fileID: 0}
-  equip: {fileID: 5332229880524238570, guid: 4c597ac54f480924089a53b8af3e0c06, type: 3}
-  critter: {fileID: 0}
+  range: 3
+  animatorController: {fileID: 9100000, guid: 6629ff0783f46984d95e8b514930b08e, type: 2}
+  swapOut: {fileID: 7400000, guid: 764b677be6007ed429f326eefc0eb0a6, type: 2}
+  swapIn: {fileID: 7400000, guid: 1e82a264a7f3f194690682a9121d59c2, type: 2}
+  use: {fileID: 7400000, guid: 88ff1cc23e969874797b9096ab8140aa, type: 2}
+  catchPS: {fileID: 1484070114201569825, guid: c62ca33348963fc4c8724bb6813e105c, type: 3}
+  critterCatchType: 0
+  critterCatchSize: 0
