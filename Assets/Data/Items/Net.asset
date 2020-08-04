@@ -20,10 +20,10 @@ MonoBehaviour:
   prefab: {fileID: 477386822487836844, guid: c2233bd2c7edbc04b930cee22c452527, type: 3}
   itemEffect: {fileID: 0}
   range: 3
-  animatorController: {fileID: 9100000, guid: 6629ff0783f46984d95e8b514930b08e, type: 2}
-  swapOut: {fileID: 7400000, guid: 764b677be6007ed429f326eefc0eb0a6, type: 2}
-  swapIn: {fileID: 7400000, guid: 1e82a264a7f3f194690682a9121d59c2, type: 2}
-  use: {fileID: 7400000, guid: 88ff1cc23e969874797b9096ab8140aa, type: 2}
+  animatorController: {fileID: 9100000, guid: 158692820b54a1c47beda9683a2cb6a6, type: 2}
+  swapOut: {fileID: 7400000, guid: 000c5cbadbd3a1a4e982a3e47394277e, type: 2}
+  swapIn: {fileID: 7400000, guid: d97d9467e24235547bb849f02ed65f7e, type: 2}
+  use: {fileID: 7400000, guid: 65e27edcc933d5c4d84d825d301ca716, type: 2}
   catchPS: {fileID: 1484070114201569825, guid: c62ca33348963fc4c8724bb6813e105c, type: 3}
-  critterCatchType: 0
+  critterCatchType: 1
   critterCatchSize: 0

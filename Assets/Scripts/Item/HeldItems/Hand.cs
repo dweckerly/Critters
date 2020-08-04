@@ -35,7 +35,6 @@ public class Hand : MeleeItem
         Item item = CheckForItem();
         if (item != null)
         {
-            Debug.Log(item.gameObject.name);
             if(hia.player.inventory.AddItem(item))
             {
                 hia.player.messageSystem.AddMessage("Picked up one " + item.data.itemName + ".");

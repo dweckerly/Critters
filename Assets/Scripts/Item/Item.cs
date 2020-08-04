@@ -12,8 +12,8 @@ public class Item : MonoBehaviour
 
     public HeldItemAction hia;
 
-    float arcHeight = 2f;
-    float speed = 200;
+    float arcHeight = 1.2f;
+    float speed = 250;
 
     Rigidbody rb;
     Collider itemCollider;
@@ -57,7 +57,10 @@ public class Item : MonoBehaviour
 
     public virtual void RightClickAction()
     {
-        Throw();
+        if(data.singleUse)
+        {
+            Throw();
+        }
     }
 
     protected virtual void Initialize() { }
@@ -78,13 +81,26 @@ public class Item : MonoBehaviour
         if (data.prefab != null)
         {
             EnablePhysics();
-            //GameObject projectile = Instantiate(data.prefab, transform.position + (hia.transform.forward * 2), hia.transform.rotation);
-            GameObject projectile = gameObject;
+            InventoryItem iItem = new InventoryItem(this);
+            hia.player.inventory.RemoveItem(iItem);
+            GameObject projectile = Instantiate(data.prefab, hia.player.transform.position + hia.player.transform.forward, hia.transform.rotation);
+            projectile.transform.SetParent(null);
             Rigidbody rb = projectile.GetComponent<Rigidbody>();
             rb.AddForce(((transform.up * arcHeight) + hia.transform.forward) * speed);
             float torque = Random.Range(-100, 100);
             rb.AddTorque(transform.forward * torque);
-            SingleUseItemCheck();
+            if (!hia.player.inventory.ItemIsLastInInventory(iItem))
+            {
+                hia.SwapItem(0);
+            }
+            if (hia.player.inventory.ItemIsLastInInventory(iItem))
+            {
+                hia.player.inventory.SetSelectedItem(0);
+            }
+            else
+            {
+                hia.player.inventory.SetSelectedItem(hia.player.inventory.inventory.items.IndexOf(iItem));
+            }
         }
     }
 

@@ -125,7 +125,6 @@ public class InventoryManager : MonoBehaviour
             {
                 equipText.text = "UNEQUIP";
             }
-            equipButton.interactable = false;
             dropButton.interactable = true;
         }
     }
@@ -180,7 +179,6 @@ public class InventoryManager : MonoBehaviour
         {
             UnEquipItem(itemEquip);
         }
-
         PopulateInventory();
     }
 
@@ -214,7 +212,10 @@ public class InventoryManager : MonoBehaviour
         Text equipText = equipButton.GetComponentInChildren<Text>();
         equipText.text = "EQUIP";
         player.playerHeldItems.heldItems.Remove(player.playerHeldItems.heldItems[itemIndex]);
-        Destroy(player.playerHeldItems.gameObject.transform.GetChild(itemIndex).gameObject);
+        if(player.playerHeldItems.gameObject.transform.GetChild(itemIndex).gameObject != null)
+        {
+            Destroy(player.playerHeldItems.gameObject.transform.GetChild(itemIndex).gameObject);
+        }
         player.playerHeldItems.Initialize();
     }
 
