@@ -97,10 +97,6 @@ public class Item : MonoBehaviour
             {
                 hia.player.inventory.SetSelectedItem(0);
             }
-            else
-            {
-                hia.player.inventory.SetSelectedItem(hia.player.inventory.inventory.items.IndexOf(iItem));
-            }
         }
     }
 

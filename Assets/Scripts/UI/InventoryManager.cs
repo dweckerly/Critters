@@ -18,6 +18,8 @@ public class InventoryManager : MonoBehaviour
 
     InventoryItem selectedItem;
 
+    int maxHeldItems = 4;
+
     void Update()
     {
         if (player.playerInput.BackPackButton()) 
@@ -83,6 +85,7 @@ public class InventoryManager : MonoBehaviour
             else
             {
                 SetItemDetails();
+                EnableItemButtons();
             }
         }
     }
@@ -196,6 +199,11 @@ public class InventoryManager : MonoBehaviour
                 UnEquipItem(i);
                 return;
             }
+        }
+        if (player.playerHeldItems.heldItems.Count > maxHeldItems)
+        {
+            player.messageSystem.AddMessage("You can't hold anything else...");
+            return;
         }
         Text equipText = equipButton.GetComponentInChildren<Text>();
         equipText.text = "UNEQUIP";
