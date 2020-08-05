@@ -16,15 +16,21 @@ MonoBehaviour:
   critterSpawnChances:
   - critter: {fileID: 1537397748219324872, guid: ff11ba3446b6a50479c4ecf934c16485,
       type: 3}
+    minAmount: 2
+    maxAmount: 6
     chance: 0.5
   - critter: {fileID: 7408027477610424260, guid: d4293f43ebc1eef48ad82823d053676f,
       type: 3}
+    minAmount: 2
+    maxAmount: 6
     chance: 0.5
   - critter: {fileID: 4658855644676330876, guid: adc663ebf79215b44975d2aa34f72d73,
       type: 3}
+    minAmount: 1
+    maxAmount: 4
     chance: 0.5
   - critter: {fileID: 5902476724350573478, guid: 78cfd0775d9831d4daf01e29c34f076b,
       type: 3}
+    minAmount: 1
+    maxAmount: 4
     chance: 0.5
-  minCritters: 6
-  maxCritters: 0

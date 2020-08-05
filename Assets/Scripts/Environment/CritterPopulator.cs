@@ -15,17 +15,29 @@ public class CritterPopulator : MonoBehaviour
 
     void SetLocationCritters()
     {
-        while(locationCritters.Count < locationData.minCritters)
+        for (int i = 0; i < locationData.critterSpawnChances.Count; i++)
         {
-            for (int i = 0; i < locationData.critterSpawnChances.Count; i++)
+            for (int j = 0; j < locationData.critterSpawnChances[i].maxAmount; j++)
             {
-                float rand = Random.Range(0f, 1f);
-                if(rand < locationData.critterSpawnChances[i].chance)
+                if(GetSpawnedCritters(locationData.critterSpawnChances[i].critter) < locationData.critterSpawnChances[i].minAmount)
                 {
                     locationCritters.Add(locationData.critterSpawnChances[i].critter);
                 }
+                else
+                {
+                    float rand = Random.Range(0f, 1f);
+                    if (rand < locationData.critterSpawnChances[i].chance)
+                    {
+                        locationCritters.Add(locationData.critterSpawnChances[i].critter);
+                    }
+                }
             }
         }
+    }
+
+    int GetSpawnedCritters(Critter critter)
+    {
+        return locationCritters.FindAll(s => s.Equals(critter)).Count;
     }
 
     Critter[] GetHidingCritters()

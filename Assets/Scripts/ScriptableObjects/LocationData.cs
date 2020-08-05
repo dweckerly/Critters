@@ -7,6 +7,4 @@ public class LocationData : ScriptableObject
     public string locationName;
     [SerializeField]
     public List<CritterSpawnChance> critterSpawnChances;
-    public int minCritters;
-    public int maxCritters;
 }
