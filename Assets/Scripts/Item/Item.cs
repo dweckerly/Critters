@@ -25,6 +25,7 @@ public class Item : MonoBehaviour
         if(data.itemEffect != null)
         {
             itemEffect = (ItemEffect)gameObject.AddComponent(data.itemEffect.GetType());
+            itemEffect.item = this;
         }
         rb = GetComponent<Rigidbody>();
         itemCollider = GetComponent<Collider>();

@@ -23,8 +23,18 @@ public class PlayerHealth : HealthController
     public override void TakeDamage(int dmg, Interactables tag)
     {
         base.TakeDamage(dmg, tag);
-        UpdateHearts(dmg);
+        UpdateHearts();
         ShowDamagePanel();
+    }
+
+    public void HealDamage(int dmg)
+    {
+        currentHealth += dmg;
+        if(currentHealth > maxHealth)
+        {
+            currentHealth = maxHealth;
+        }
+        UpdateHearts();
     }
 
     void ShowDamagePanel()
@@ -39,6 +49,30 @@ public class PlayerHealth : HealthController
         damagePanel.color = new Color32(255, 73, 71, 0);
     }
 
+    void UpdateHearts()
+    {
+        heartImageIndex = 2;
+        int cHealthCounter = currentHealth;
+        while(cHealthCounter >= 0 && heartImageIndex >= 0)
+        {
+            if(cHealthCounter > 4)
+            {
+                heartIndices[heartImageIndex] = 4;
+            }
+            else
+            {
+                heartIndices[heartImageIndex] = cHealthCounter;
+
+            }
+            heartImageIndex--;
+            cHealthCounter -= 4;
+        }
+        for(int i = 0; i < heartImages.Count; i++)
+        {
+            heartImages[i].sprite = heartSprites[heartIndices[i]];
+        }
+    }
+    /*
     void UpdateHearts(int dmg)
     {
         if (heartIndices[heartImageIndex] - dmg < 0)
@@ -60,4 +94,5 @@ public class PlayerHealth : HealthController
             heartImages[i].sprite = heartSprites[heartIndices[i]];
         }
     }
+    */
 }
