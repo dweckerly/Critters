@@ -144,7 +144,10 @@ public class InventoryManager : MonoBehaviour
         if(inventory.AddItem(item))
         {
             InventoryItem iItem = new InventoryItem(item);
-            player.playerHeldItems.heldItemsUIManager.IncrementItemAmount(iItem);
+            if(iItem.data.singleUse)
+            {
+                player.playerHeldItems.heldItemsUIManager.IncrementItemAmount(iItem);
+            }
             return true;
         }
         return false;
@@ -176,7 +179,10 @@ public class InventoryManager : MonoBehaviour
     public void RemoveItem(InventoryItem item)
     {
         inventory.RemoveItem(item);
-        player.playerHeldItems.heldItemsUIManager.DecrementItemAmount(item);
+        if(item.data.singleUse)
+        {
+            player.playerHeldItems.heldItemsUIManager.DecrementItemAmount(item);
+        }
         int itemEquip = IsItemEquipped(item);
         if (itemEquip > -1 && ItemIsLastInInventory(item))
         {
