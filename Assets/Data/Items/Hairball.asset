@@ -15,7 +15,7 @@ MonoBehaviour:
   itemName: Hair ball
   description: Course, wiry critter hair tangled around itself.
   image: {fileID: 21300000, guid: 3de47322ad8a4f54e9652e5db6cfe9d9, type: 3}
-  singleUse: 0
+  singleUse: 1
   weight: 1
   prefab: {fileID: 1929789920328210960, guid: 4320ca4a92653b14e82b8b42e792927c, type: 3}
   itemEffect: {fileID: 0}
