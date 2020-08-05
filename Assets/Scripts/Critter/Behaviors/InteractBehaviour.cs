@@ -1,14 +1,8 @@
 ﻿public class InteractBehaviour : CritterBehaviour
 {
-    public override void StartBehaviour()
-    {
+    public override void StartBehaviour() { }
 
-    }
-
-    public override void EndBehaviour()
-    {
-
-    }
+    public override void EndBehaviour() { }
 
     public override void DoBehaviour()
     {

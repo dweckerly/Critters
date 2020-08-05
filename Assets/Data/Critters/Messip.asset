@@ -26,13 +26,13 @@ MonoBehaviour:
   critterInteractions:
   - interactableTag: 3
     inducedState: 1
-    behaviour: {fileID: 5376436661616831148, guid: 22c3f63114d5c944eba16d771b16735b,
+    behaviour: {fileID: 8765199581011821589, guid: 22c3f63114d5c944eba16d771b16735b,
       type: 3}
   - interactableTag: 0
     inducedState: 1
     behaviour: {fileID: -385866162970652931, guid: 22c3f63114d5c944eba16d771b16735b,
       type: 3}
-  defaultNormalBehaviour: {fileID: 8777040767825448462, guid: 22c3f63114d5c944eba16d771b16735b,
+  defaultNormalBehaviour: {fileID: -8131517216454685297, guid: 22c3f63114d5c944eba16d771b16735b,
     type: 3}
   defaultThreatenedBehaviour: {fileID: 5949815602845411733, guid: 22c3f63114d5c944eba16d771b16735b,
     type: 3}
