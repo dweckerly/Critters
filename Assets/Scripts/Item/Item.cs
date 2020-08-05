@@ -50,6 +50,10 @@ public class Item : MonoBehaviour
         {
             itemEffect.Use();
         }
+        else
+        {
+            hia.player.messageSystem.AddMessage("This doesn't seem to do anything...");
+        }
     }
     public virtual void UnClickAction()
     {
