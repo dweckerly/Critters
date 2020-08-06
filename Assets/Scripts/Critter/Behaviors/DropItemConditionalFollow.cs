@@ -1,4 +1,5 @@
-﻿using System.Threading;
+﻿using System.Collections.Generic;
+using System.Threading;
 using UnityEngine;
 
 public class DropItemConditionalFollow : ConditionalFollowBehaviour
@@ -19,7 +20,8 @@ public class DropItemConditionalFollow : ConditionalFollowBehaviour
             if(playerInterface.inventory.inventory.items.Count > 0)
             {
                 int count = 0;
-                foreach (InventoryItem item in playerInterface.inventory.inventory.items)
+                List<InventoryItem> playerItems = playerInterface.inventory.inventory.items;
+                foreach (InventoryItem item in playerItems)
                 {
                     if (item.data == targetObject.data)
                     {
