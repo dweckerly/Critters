@@ -85,7 +85,6 @@ public class InventoryManager : MonoBehaviour
             else
             {
                 SetItemDetails();
-                EnableItemButtons();
             }
         }
     }
@@ -94,7 +93,6 @@ public class InventoryManager : MonoBehaviour
     {
         selectedItem = inventory.items[index];
         SetItemDetails();
-        EnableItemButtons();
     }
 
     public void SetItemDetails()
@@ -105,6 +103,7 @@ public class InventoryManager : MonoBehaviour
             itemDetails.itemImage.sprite = selectedItem.data.image;
             itemDetails.itemDescription.text = selectedItem.data.description;
             itemDetails.itemAmount.text = "x" + selectedItem.amount.ToString();
+            EnableItemButtons();
         }
     }
 
@@ -115,7 +114,7 @@ public class InventoryManager : MonoBehaviour
             Text equipText = equipButton.GetComponentInChildren<Text>();
             equipText.text = "EQUIP";
 
-            if (selectedItem.itemEffect != null)
+            if (selectedItem.data.itemEffect != null)
             {
                 useButton.interactable = true;
             }
@@ -193,7 +192,8 @@ public class InventoryManager : MonoBehaviour
 
     public void UseItem()
     {
-
+        selectedItem.itemEffect.item.hia = player.playerHeldItems;
+        selectedItem.itemEffect.Use();
     }
 
     public void EquipItem()
@@ -233,7 +233,7 @@ public class InventoryManager : MonoBehaviour
         player.playerHeldItems.Initialize();
     }
 
-    int IsItemEquipped(InventoryItem item)
+    public int IsItemEquipped(InventoryItem item)
     {
         for (int i = 0; i < player.playerHeldItems.heldItems.Count; i++)
         {
