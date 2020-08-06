@@ -33,7 +33,6 @@ public class DropItemConditionalFollow : ConditionalFollowBehaviour
                     }
                 }
             }
-            
         }
         return false;
     }
