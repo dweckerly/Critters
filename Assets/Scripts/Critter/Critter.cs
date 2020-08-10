@@ -45,6 +45,8 @@ public class Critter : MonoBehaviour
     public List<CritterInteraction> critterInteractions;
     GameObject dropItem;
 
+    float scaleVariance;
+
     private void Awake()
     {
         Initialize();
@@ -65,6 +67,10 @@ public class Critter : MonoBehaviour
             }
         }
         dropItem = data.dropItem;
+        scaleVariance = Random.Range(0.5f, 1.5f);
+        float yPosition = scaleVariance / 2f;
+        transform.localScale = new Vector3(scaleVariance, scaleVariance, 1);
+        transform.position = new Vector3(transform.position.x, yPosition, transform.position.z);
     }
 
     private void Start()
