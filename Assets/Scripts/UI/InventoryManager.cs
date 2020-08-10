@@ -20,18 +20,15 @@ public class InventoryManager : MonoBehaviour
 
     int maxHeldItems = 4;
 
-    void Update()
+    public void Open()
     {
-        if (player.playerInput.BackPackButton()) 
+        if (inventoryPanel.activeSelf)
         {
-            if(inventoryPanel.activeSelf)
-            {
-                CloseInventoryPanel();
-            }
-            else
-            {
-                OpenInventoryPanel();
-            }
+            CloseInventoryPanel();
+        }
+        else
+        {
+            OpenInventoryPanel();
         }
     }
 
