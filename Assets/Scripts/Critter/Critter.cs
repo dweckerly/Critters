@@ -71,6 +71,7 @@ public class Critter : MonoBehaviour
         float yPosition = scaleVariance / 2f;
         transform.localScale = new Vector3(scaleVariance, scaleVariance, 1);
         transform.position = new Vector3(transform.position.x, yPosition, transform.position.z);
+        interactDistance *= scaleVariance;
     }
 
     private void Start()
