@@ -24,6 +24,8 @@ public class ItemData : ScriptableObject
     public CritterType critterCatchType;
     public CritterSize critterCatchSize;
 
+    public bool decays;
+
     private void Awake()
     {
         if(itemEffect != null)

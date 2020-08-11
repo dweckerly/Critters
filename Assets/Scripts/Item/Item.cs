@@ -18,6 +18,8 @@ public class Item : MonoBehaviour
     Rigidbody rb;
     Collider itemCollider;
 
+    bool beingHeld;
+
     private void Awake()
     {
         animator = GetComponent<Animator>();
@@ -27,6 +29,10 @@ public class Item : MonoBehaviour
             itemEffect = (ItemEffect)gameObject.AddComponent(data.itemEffect.GetType());
             itemEffect.item = this;
         }
+        if (data.decays)
+        {
+            gameObject.AddComponent(typeof(ItemDecay));
+        }
         rb = GetComponent<Rigidbody>();
         itemCollider = GetComponent<Collider>();
     }
@@ -35,10 +41,12 @@ public class Item : MonoBehaviour
     {
         if (transform.parent != null)
         {
+            beingHeld = true;
             ItemIsBeingHeld();
         }
         else
         {
+            beingHeld = false;
             ItemIsOnGround();
         }
         Initialize();
@@ -68,7 +76,14 @@ public class Item : MonoBehaviour
         }
     }
 
-    protected virtual void Initialize() { }
+    protected virtual void Initialize() 
+    {
+        ItemDecay itemDecay = GetComponent<ItemDecay>();
+        if (itemDecay != null)
+        {
+            itemDecay.enabled = !IsItemBeingHeld();
+        }
+    }
 
     public float SwapOut()
     {
@@ -116,6 +131,11 @@ public class Item : MonoBehaviour
                 hia.SwapItem(0);
             }
         }
+    }
+
+    public bool IsItemBeingHeld()
+    {
+        return beingHeld;
     }
 
     private void ItemIsBeingHeld()
