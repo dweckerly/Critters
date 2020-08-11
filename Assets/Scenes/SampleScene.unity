@@ -8265,6 +8265,11 @@ PrefabInstance:
       propertyPath: heldItemsUIManager
       value: 
       objectReference: {fileID: 1205310724}
+    - target: {fileID: 2423216190108180008, guid: 0db82bfc4cf43fd47b77df79cd75d6b3,
+        type: 3}
+      propertyPath: m_Shadows.m_Type
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0db82bfc4cf43fd47b77df79cd75d6b3, type: 3}
 --- !u!4 &2505636718403725630 stripped
@@ -8719,6 +8724,11 @@ PrefabInstance:
       propertyPath: m_RootOrder
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 7188121868448871496, guid: ab39f20791d84a944a6cf88721bb1903,
+        type: 3}
+      propertyPath: m_FontData.m_Alignment
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7464467950769631719, guid: ab39f20791d84a944a6cf88721bb1903,
         type: 3}
       propertyPath: m_AnchorMin.y
@@ -9032,7 +9042,7 @@ PrefabInstance:
     - target: {fileID: 7464467951323041551, guid: ab39f20791d84a944a6cf88721bb1903,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7464467951427830420, guid: ab39f20791d84a944a6cf88721bb1903,
         type: 3}
@@ -9748,6 +9758,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_SizeDelta.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8100261074989636474, guid: ab39f20791d84a944a6cf88721bb1903,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8100261074989636474, guid: ab39f20791d84a944a6cf88721bb1903,
+        type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 140
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ab39f20791d84a944a6cf88721bb1903, type: 3}

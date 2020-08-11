@@ -25,7 +25,7 @@ public class Critter : MonoBehaviour
     public Transform target = null;
 
     public float detectRadius = 7f;
-    float interactDistance = 1.5f;
+    float interactDistance = 2f;
     
     float speed;
     int atkDamage;
@@ -67,7 +67,7 @@ public class Critter : MonoBehaviour
             }
         }
         dropItem = data.dropItem;
-        scaleVariance = Random.Range(0.5f, 1.5f);
+        scaleVariance = Random.Range(0.75f, 1.25f);
         float yPosition = scaleVariance / 2f;
         transform.localScale = new Vector3(scaleVariance, scaleVariance, 1);
         transform.position = new Vector3(transform.position.x, yPosition, transform.position.z);
