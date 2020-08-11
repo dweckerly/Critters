@@ -58,6 +58,11 @@ public class PlayerInput : MonoBehaviour
         return Input.GetKeyUp(KeyCode.J);
     }
 
+    public bool FlashLightButton()
+    {
+        return Input.GetKeyUp(KeyCode.F);
+    }
+
     public int HeldItemKeyPressed()
     {
         if(detectNumericInput)

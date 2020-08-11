@@ -59,6 +59,7 @@ GameObject:
   - component: {fileID: 2423216189047519233}
   - component: {fileID: 2423216189047519237}
   - component: {fileID: 2423216189047519243}
+  - component: {fileID: 8912136746331996697}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -190,6 +191,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 2423216189047519236}
   cam: {fileID: 2423216190986904848}
+--- !u!114 &8912136746331996697
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2423216189047519234}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 35ec69c518898fd41b8a76c7ae9e8c9f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerInterface: {fileID: 2423216189047519236}
+  flashLight: {fileID: 2423216190108180008}
 --- !u!1 &2423216189719865090
 GameObject:
   m_ObjectHideFlags: 0
@@ -298,7 +313,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &2423216190108180009
 Transform:
   m_ObjectHideFlags: 0
@@ -320,7 +335,7 @@ Light:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2423216190108180010}
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 10
   m_Type: 0
   m_Shape: 0

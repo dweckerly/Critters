@@ -8270,6 +8270,11 @@ PrefabInstance:
       propertyPath: m_Shadows.m_Type
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 2423216190108180008, guid: 0db82bfc4cf43fd47b77df79cd75d6b3,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0db82bfc4cf43fd47b77df79cd75d6b3, type: 3}
 --- !u!4 &2505636718403725630 stripped
@@ -9042,7 +9047,7 @@ PrefabInstance:
     - target: {fileID: 7464467951323041551, guid: ab39f20791d84a944a6cf88721bb1903,
         type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7464467951427830420, guid: ab39f20791d84a944a6cf88721bb1903,
         type: 3}
