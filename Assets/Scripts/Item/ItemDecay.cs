@@ -5,7 +5,7 @@ using UnityEngine;
 public class ItemDecay : MonoBehaviour
 {
     float itemLife = 10f;
-    float decayTime = 10f;
+    float decayTime = 1000f;
     float startTime;
 
     bool decaying;
@@ -42,7 +42,7 @@ public class ItemDecay : MonoBehaviour
         }
         Vector3 scale = transform.localScale;
         transform.localScale = new Vector3(scale.x * scaleFactor, scale.y * scaleFactor, scale.z);
-        if(Time.time > startTime + decayTime)
+        if(Time.time > startTime + decayTime || transform.localScale.x < 0.001)
         {
             Destroy(item.gameObject);
         }
