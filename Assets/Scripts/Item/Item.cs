@@ -29,7 +29,7 @@ public class Item : MonoBehaviour
             itemEffect = (ItemEffect)gameObject.AddComponent(data.itemEffect.GetType());
             itemEffect.item = this;
         }
-        if (data.Decays())
+        if (data.decays)
         {
             gameObject.AddComponent(typeof(ItemDecay));
         }

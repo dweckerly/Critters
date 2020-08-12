@@ -1,6 +1,8 @@
 ﻿public class EatBehaviour : InteractBehaviour
 {
     public FoodType diet;
+    Food foodTarget;
+
     public override void DoBehaviour()
     {
         if(!critter.critterHunger.IsFull())

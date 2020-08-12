@@ -1,4 +1,4 @@
-﻿public class VegitarianEatBehaviour : EatBehaviour
+﻿public class VegetarianEatBehaviour : EatBehaviour
 {
     void Start()
     {

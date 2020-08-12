@@ -17,7 +17,6 @@ GameObject:
   - component: {fileID: 3938099843666490475}
   - component: {fileID: 5376436661616831148}
   - component: {fileID: -2418413421476601301}
-  - component: {fileID: -385866162970652931}
   - component: {fileID: -8131517216454685297}
   - component: {fileID: 8765199581011821589}
   - component: {fileID: 3856480899089385946}
@@ -148,20 +147,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   critter: {fileID: 0}
---- !u!114 &-385866162970652931
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5871581214555068221}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3005397f3b8afe045b84cbf4050bca3e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  critter: {fileID: 0}
-  diet: 0
 --- !u!114 &-8131517216454685297
 MonoBehaviour:
   m_ObjectHideFlags: 0

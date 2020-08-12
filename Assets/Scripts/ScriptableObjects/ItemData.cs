@@ -25,22 +25,13 @@ public class ItemData : ScriptableObject
     public CritterSize critterCatchSize;
 
     public FoodType foodType;
-    bool decays = false;
+    public bool decays;
 
     private void Awake()
     {
-        if(foodType != FoodType.None)
-        {
-            decays = true;
-        }
         if(itemEffect != null)
         {
             itemEffect.item = prefab.GetComponent<Item>();
         }
-    }
-
-    public bool Decays()
-    {
-        return decays;
     }
 }
