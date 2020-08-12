@@ -7,11 +7,8 @@ public class ThreatenedBehaviour : CritterBehaviour
 
     public override void StartBehaviour()
     {
+        base.StartBehaviour();
         startTime = Time.time;
-        if (critter == null)
-        {
-            critter = GetComponent<Critter>();
-        }
         critter.emoteController.ShowEmote(Emotes.Exclamation);
     }
 

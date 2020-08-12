@@ -13,10 +13,10 @@ GameObject:
   - component: {fileID: 7060269543550454655}
   - component: {fileID: 732767072848883759}
   - component: {fileID: -7108221460905708632}
-  - component: {fileID: 8230679645967873290}
+  - component: {fileID: 8970606518244885149}
   m_Layer: 0
   m_Name: apple
-  m_TagString: Food
+  m_TagString: Item
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -134,7 +134,7 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!114 &8230679645967873290
+--- !u!114 &8970606518244885149
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -143,7 +143,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 3468000803343008386}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c7655a86e8d2df3419e24f05d3c5398f, type: 3}
+  m_Script: {fileID: 11500000, guid: 17404b05351dca546a73734e92a8223d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   data: {fileID: 11400000, guid: a3d49eb3d648559499569746398c1a4d, type: 2}

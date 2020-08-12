@@ -4,11 +4,6 @@ using UnityEngine;
 
 public class SleepBehaviour : CritterBehaviour
 {
-    public override void StartBehaviour()
-    {
-        
-    }
-
     public override void EndBehaviour()
     {
         

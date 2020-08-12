@@ -11,6 +11,7 @@ public class DropItemBehaviour : WanderBehaviour
 
     public override void StartBehaviour() 
     {
+        base.StartBehaviour();
         dropItem = critter.data.dropItem;
         SetTime();
     }

@@ -115,7 +115,10 @@ public class Item : MonoBehaviour
             }
             if (hia.player.inventory.ItemIsLastInInventory(iItem))
             {
-                hia.player.inventory.SetSelectedItem(0);
+                if(hia.player.inventory.inventory.items.Count > 0)
+                {
+                    hia.player.inventory.SetSelectedItem(0);
+                }
             }
         }
     }

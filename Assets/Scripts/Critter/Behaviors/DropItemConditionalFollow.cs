@@ -9,6 +9,7 @@ public class DropItemConditionalFollow : ConditionalFollowBehaviour
 
     public override void StartBehaviour()
     {
+        base.StartBehaviour();
         targetObject = critter.data.dropItem.GetComponent<Item>();
     }
 

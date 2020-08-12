@@ -12,11 +12,6 @@ public class ProjectileBehaviour : CritterBehaviour
     float fireInterval;
     Collider sourceCollider;
 
-    public override void StartBehaviour()
-    {
-
-    }
-
     public override void EndBehaviour()
     {
 

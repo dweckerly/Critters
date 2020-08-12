@@ -1,20 +1,29 @@
-﻿public class EatBehaviour : InteractBehaviour
+﻿using UnityEngine;
+
+public class EatBehaviour : InteractBehaviour
 {
     public FoodType diet;
     Food foodTarget;
 
     public override void DoBehaviour()
     {
-        if(!critter.critterHunger.IsFull())
+        if(critter.target != null)
         {
-            FoodType foodType = critter.target.GetComponent<Item>().data.foodType;
-            if (CritterEatsThis(foodType))
+            foodTarget = critter.target.GetComponent<Food>();
+        }
+        if (foodTarget != null)
+        {
+            if (!critter.critterHunger.IsFull() && CritterEatsThis(foodTarget.data.foodType))
             {
                 base.DoBehaviour();
                 if (critter.IsWithinInteractDistance())
                 {
                     Eat();
                 }
+            }
+            else
+            {
+                critter.normalBehaviour.DoBehaviour();
             }
         }
         else

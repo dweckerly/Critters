@@ -13,10 +13,10 @@ GameObject:
   - component: {fileID: 3020556114563904084}
   - component: {fileID: -2497423954530835005}
   - component: {fileID: -4517117681289868625}
-  - component: {fileID: 7186526726284806869}
+  - component: {fileID: 845661941522779486}
   m_Layer: 0
   m_Name: meat-small
-  m_TagString: Food
+  m_TagString: Item
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -133,7 +133,7 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!114 &7186526726284806869
+--- !u!114 &845661941522779486
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -142,7 +142,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 4089027362549001213}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c7655a86e8d2df3419e24f05d3c5398f, type: 3}
+  m_Script: {fileID: 11500000, guid: 17404b05351dca546a73734e92a8223d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   data: {fileID: 11400000, guid: 36eae5b6a7d78aa4a8c986b2dd8176a6, type: 2}
