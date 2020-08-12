@@ -24,13 +24,13 @@ MonoBehaviour:
     type: 3}
   activeTimes: 03000000
   critterInteractions:
-  - interactableTag: 3
+  - interactableTag: 2
     inducedState: 1
     behaviour: {fileID: 8765199581011821589, guid: 22c3f63114d5c944eba16d771b16735b,
       type: 3}
-  - interactableTag: 0
+  - interactableTag: 1
     inducedState: 1
-    behaviour: {fileID: -385866162970652931, guid: 22c3f63114d5c944eba16d771b16735b,
+    behaviour: {fileID: -8899004667510002354, guid: 22c3f63114d5c944eba16d771b16735b,
       type: 3}
   defaultNormalBehaviour: {fileID: -8131517216454685297, guid: 22c3f63114d5c944eba16d771b16735b,
     type: 3}

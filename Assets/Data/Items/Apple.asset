@@ -29,4 +29,4 @@ MonoBehaviour:
   catchPS: {fileID: 0}
   critterCatchType: 0
   critterCatchSize: 0
-  decays: 1
+  foodType: 2

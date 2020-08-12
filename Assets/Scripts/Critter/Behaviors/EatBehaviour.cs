@@ -1,19 +1,33 @@
 ﻿public class EatBehaviour : InteractBehaviour
 {
+    public FoodType diet;
     public override void DoBehaviour()
     {
         if(!critter.critterHunger.IsFull())
         {
-            base.DoBehaviour();
-            if (critter.IsWithinInteractDistance())
+            FoodType foodType = critter.target.GetComponent<Item>().data.foodType;
+            if (CritterEatsThis(foodType))
             {
-                Eat();
+                base.DoBehaviour();
+                if (critter.IsWithinInteractDistance())
+                {
+                    Eat();
+                }
             }
         }
         else
         {
             critter.normalBehaviour.DoBehaviour();
         }
+    }
+
+    bool CritterEatsThis(FoodType targetFoodType)
+    {
+        if(targetFoodType != FoodType.None && (diet == FoodType.Any || targetFoodType == diet))
+        {
+            return true;
+        }
+        return false;
     }
 
     void Eat()

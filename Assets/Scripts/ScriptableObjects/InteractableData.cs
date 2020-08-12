@@ -24,10 +24,17 @@ public enum CritterSize
 
 public enum Interactables
 {
-    Food,
     Critter,
     Item,
     Player
+}
+
+public enum FoodType
+{
+    None,
+    Meat,
+    Vegetable,
+    Any
 }
 
 public enum ActiveTime
