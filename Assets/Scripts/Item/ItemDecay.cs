@@ -3,12 +3,14 @@
 public class ItemDecay : MonoBehaviour
 {
     float itemLife = 10f;
-    float decayTime = 1000f;
+    float decayTime = 10f;
     float startTime;
 
     bool decaying;
 
     Item item;
+
+    SpriteRenderer spriteRenderer;
 
     private void OnEnable()
     {
@@ -28,19 +30,21 @@ public class ItemDecay : MonoBehaviour
         {
             decaying = true;
             startTime = Time.time;
+            spriteRenderer = GetComponent<SpriteRenderer>();
         }
     }
 
     void Decay()
     {
-        float scaleFactor = 0;
+        float alpha = 0;
+        Color color = spriteRenderer.material.color;
         if ((startTime + decayTime) - Time.time > 0) 
         {
-            scaleFactor = ((startTime + decayTime) - Time.time) / decayTime;
+            alpha = 255 * (((startTime + decayTime) - Time.time) / decayTime);
         }
-        Vector3 scale = transform.localScale;
-        transform.localScale = new Vector3(scale.x * scaleFactor, scale.y * scaleFactor, scale.z);
-        if(Time.time > startTime + decayTime || transform.localScale.x < 0.001)
+        color.a = alpha;
+        spriteRenderer.material.color = color;
+        if (Time.time > startTime + decayTime)
         {
             Destroy(item.gameObject);
         }
