@@ -1,6 +1,6 @@
 ﻿public class InteractBehaviour : CritterBehaviour
 {
-    public override void EndBehaviour() { }
+    public override void Initialize() { }
 
     public override void DoBehaviour()
     {
@@ -13,4 +13,6 @@
             critter.critterController.MoveTowardsTarget();
         }
     }
+
+    public override void EndBehaviour() { }
 }

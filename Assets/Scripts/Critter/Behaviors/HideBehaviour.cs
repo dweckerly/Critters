@@ -6,17 +6,17 @@ public class HideBehaviour : NormalBehaviour
     Transform hidingPlaceT;
     bool hiding = false;
 
-    public override void EndBehaviour()
-    {
-        if(hiding)
-        {
-            StopHiding();
-        }
-    }
-
     public override void DoBehaviour()
     {
         Hiding();
+    }
+
+    public override void EndBehaviour()
+    {
+        if (hiding)
+        {
+            StopHiding();
+        }
     }
 
     void Hiding()

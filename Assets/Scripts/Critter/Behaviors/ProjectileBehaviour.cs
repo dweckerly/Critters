@@ -12,12 +12,7 @@ public class ProjectileBehaviour : CritterBehaviour
     float fireInterval;
     Collider sourceCollider;
 
-    public override void EndBehaviour()
-    {
-
-    }
-
-    private void Start()
+    public override void Initialize()
     {
         sourceCollider = critter.gameObject.GetComponent<Collider>();
     }
@@ -55,6 +50,8 @@ public class ProjectileBehaviour : CritterBehaviour
             }
         }
     }
+
+    public override void EndBehaviour() { }
 
     IEnumerator FireProjectile()
     {

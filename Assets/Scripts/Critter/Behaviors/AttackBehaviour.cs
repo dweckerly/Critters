@@ -8,17 +8,6 @@ public class AttackBehaviour : ThreatenedBehaviour
 
     HealthController targetHealth;
 
-    public override void StartBehaviour()
-    {
-        base.StartBehaviour();
-    }
-
-    public override void EndBehaviour()
-    {
-        base.EndBehaviour();
-        targetHealth = null;
-    }
-
     public override void DoBehaviour()
     {
         base.DoBehaviour();
@@ -39,6 +28,12 @@ public class AttackBehaviour : ThreatenedBehaviour
         {
             critter.critterController.MoveTowardsTarget();
         }
+    }
+
+    public override void EndBehaviour()
+    {
+        base.EndBehaviour();
+        targetHealth = null;
     }
 
     void Attack()

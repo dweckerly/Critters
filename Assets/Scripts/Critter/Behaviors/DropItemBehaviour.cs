@@ -9,9 +9,8 @@ public class DropItemBehaviour : WanderBehaviour
     float minDropInterval = 10f;
     float maxDropInterval = 30f;
 
-    public override void StartBehaviour() 
+    public override void Initialize() 
     {
-        base.StartBehaviour();
         dropItem = critter.data.dropItem;
         SetTime();
     }

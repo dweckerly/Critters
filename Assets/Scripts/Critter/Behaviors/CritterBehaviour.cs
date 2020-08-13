@@ -4,13 +4,16 @@ public abstract class CritterBehaviour : MonoBehaviour
 {
     public Critter critter;
 
-    public virtual void StartBehaviour() 
+    public void StartBehaviour()
     {
         if (critter == null)
         {
             critter = GetComponent<Critter>();
         }
+        Initialize();
     }
+
+    public abstract void Initialize();
 
     public abstract void DoBehaviour();
 

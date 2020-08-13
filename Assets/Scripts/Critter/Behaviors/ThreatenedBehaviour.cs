@@ -5,9 +5,8 @@ public class ThreatenedBehaviour : CritterBehaviour
     float safeTeimInterval = 3f;
     float startTime;
 
-    public override void StartBehaviour()
+    public override void Initialize()
     {
-        base.StartBehaviour();
         startTime = Time.time;
         critter.emoteController.ShowEmote(Emotes.Exclamation);
     }

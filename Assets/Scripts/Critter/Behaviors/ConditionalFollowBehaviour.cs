@@ -1,6 +1,5 @@
 ﻿public abstract class ConditionalFollowBehaviour : FollowBehaviour
 {
-
     public override void DoBehaviour()
     {
         if (!critter.IsWithinDetectDistance())
