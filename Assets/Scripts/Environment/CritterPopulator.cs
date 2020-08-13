@@ -95,6 +95,7 @@ public class CritterPopulator : MonoBehaviour
             if (!spawnPoints[spawnIndex].hasCritter)
             {
                 spawnPoints[spawnIndex].hasCritter = true;
+                critters[i].level = Random.Range(1, 5);
                 Instantiate(critters[i], spawnPoints[spawnIndex].transform.position, Quaternion.identity);
             }
         }

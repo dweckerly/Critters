@@ -40,7 +40,7 @@ public class CritterController : MonoBehaviour
             {
 				critter.animator.SetBool("moving", true);
 			}
-			moveDirection = moveDirection.normalized * critter.data.speed;
+			moveDirection = moveDirection.normalized * critter.speed;
 			controller.Move(moveDirection * Time.deltaTime);
 		}
 	}

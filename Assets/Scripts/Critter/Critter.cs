@@ -2,10 +2,10 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-[RequireComponent(typeof(Critter))]
 public class Critter : MonoBehaviour
 {
     public CritterData data;
+    public int level;
 
     public CritterController critterController;
     public CritterBehaviourController behaviourController;
@@ -27,7 +27,7 @@ public class Critter : MonoBehaviour
     public float detectRadius = 7f;
     float interactDistance = 2f;
     
-    float speed;
+    public float speed;
     int atkDamage;
     float atkSpeed;
 

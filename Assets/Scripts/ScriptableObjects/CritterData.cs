@@ -8,6 +8,16 @@ public class CritterData : InteractableData
     public string critterName;
     public CritterType type;
     public CritterSize size;
+
+    #region STATS
+    public int baseHP;
+    public int baseATK;
+    public int baseDEF;
+    public int baseSATK;
+    public int baseSDEF;
+    public int baseSPD;
+    #endregion
+
     public float speed;
     public int health;
     public int atkDamage;
