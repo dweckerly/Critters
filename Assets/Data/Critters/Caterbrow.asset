@@ -16,6 +16,12 @@ MonoBehaviour:
   critterName: Caterbrow
   type: 1
   size: 0
+  baseHP: 4
+  baseATK: 3
+  baseDEF: 3
+  baseSATK: 2
+  baseSDEF: 4
+  baseSPD: 5
   speed: 5
   health: 4
   atkDamage: 0

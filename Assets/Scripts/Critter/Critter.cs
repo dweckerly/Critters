@@ -6,6 +6,7 @@ public class Critter : MonoBehaviour
 {
     public CritterData data;
     public int level;
+    public CritterStats critterStats;
 
     public CritterController critterController;
     public CritterBehaviourController behaviourController;
@@ -76,6 +77,7 @@ public class Critter : MonoBehaviour
 
     private void Start()
     {
+        critterStats = new CritterStats(data, level);
         speed = data.speed;
         atkDamage = data.atkDamage;
         atkSpeed = data.atkSpeed;

@@ -16,6 +16,12 @@ MonoBehaviour:
   critterName: Wormado
   type: 1
   size: 0
+  baseHP: 3
+  baseATK: 3
+  baseDEF: 3
+  baseSATK: 3
+  baseSDEF: 4
+  baseSPD: 5
   speed: 4
   health: 3
   atkDamage: 0

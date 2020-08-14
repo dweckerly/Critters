@@ -16,6 +16,12 @@ MonoBehaviour:
   critterName: Messip
   type: 0
   size: 0
+  baseHP: 6
+  baseATK: 3
+  baseDEF: 6
+  baseSATK: 4
+  baseSDEF: 7
+  baseSPD: 9
   speed: 7
   health: 5
   atkDamage: 1

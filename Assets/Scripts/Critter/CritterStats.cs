@@ -22,7 +22,7 @@ public class CritterStats
     public int uSPD;
 
     int minUniqueModifier = 1;
-    int maxUniqueModifier = 15;
+    int maxUniqueModifier = 25;
 
     int baseStatMod = 5;
     int baseXP = 10;

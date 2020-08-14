@@ -16,6 +16,12 @@ MonoBehaviour:
   critterName: Carnipula
   type: 2
   size: 0
+  baseHP: 6
+  baseATK: 8
+  baseDEF: 5
+  baseSATK: 3
+  baseSDEF: 4
+  baseSPD: 2
   speed: 5
   health: 5
   atkDamage: 1
