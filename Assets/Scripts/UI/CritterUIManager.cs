@@ -55,7 +55,7 @@ public class CritterUIManager : MonoBehaviour
             critterUIObject.index = i;
             critterUIObject.critterSprite.sprite = playerTeam.critters[i].data.critterSprite;
             critterUIObject.critterName.text = playerTeam.critters[i].data.critterName;
-            critterUIObject.hpText.text = playerTeam.critters[i].currentHP + " / " + playerTeam.critters[i].HP;
+            critterUIObject.hpText.text = playerTeam.critters[i].currentHP + " / " + playerTeam.critters[i].HP.value.ToString();
             Instantiate(critterUIObject, critterViewParent);
         }
         if (playerTeam.critters.Count > 0) 
@@ -92,12 +92,12 @@ public class CritterUIManager : MonoBehaviour
 
     void ShowSelectedCritterDetails()
     {
-        critterDetails.critterATK.text = selectedCritter.ATK.ToString();
-        critterDetails.critterDEF.text = selectedCritter.DEF.ToString();
-        critterDetails.critterSATK.text = selectedCritter.SATK.ToString();
-        critterDetails.critterSDEF.text = selectedCritter.SDEF.ToString();
-        critterDetails.critterSPD.text = selectedCritter.SPD.ToString();
-        critterDetails.critterHP.text = selectedCritter.HP.ToString();
+        critterDetails.critterATK.text = selectedCritter.ATK.value.ToString();
+        critterDetails.critterDEF.text = selectedCritter.DEF.value.ToString();
+        critterDetails.critterSATK.text = selectedCritter.SATK.value.ToString();
+        critterDetails.critterSDEF.text = selectedCritter.SDEF.value.ToString();
+        critterDetails.critterSPD.text = selectedCritter.SPD.value.ToString();
+        critterDetails.critterHP.text = selectedCritter.HP.value.ToString();
         critterDetails.critterDescription.text = selectedCritter.data.description;
         critterDetails.critterName.text = selectedCritter.data.critterName;
         critterDetails.critterImage.sprite = selectedCritter.data.critterSprite;
