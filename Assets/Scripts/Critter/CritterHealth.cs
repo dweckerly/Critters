@@ -15,13 +15,16 @@ public class CritterHealth : HealthController
     {
         base.TakeDamage(dmg, tag);
         critter.animator.SetTrigger("hit");
+        
         if (currentHealth <= 0)
         {
             critter.Die();
+            return;
         }
         else
         {
             critter.behaviourController.AddNewInteraction(tag, State.Threatened);
         }
+        critter.critterStats.UpdateHP(currentHealth);
     }
 }

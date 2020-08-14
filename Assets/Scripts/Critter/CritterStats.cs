@@ -29,12 +29,16 @@ public class CritterStats
     int baseStatMod = 5;
     int baseXP = 10;
 
-    public CritterStats(CritterData _data, int _level, int _currentHP)
+    public CritterStats(CritterData _data, int _level)
     {
         data = _data;
         level = _level;
         InitializeStats();
-        currentHP = Mathf.CeilToInt(HP * (_currentHP / data.health));
+    }
+
+    public void UpdateHP(int hp)
+    {
+        currentHP = Mathf.CeilToInt(HP * (hp / (float)data.health));
     }
 
     void InitializeStats()
@@ -48,6 +52,7 @@ public class CritterStats
     void CalculateStats()
     {
         HP = Mathf.RoundToInt((((data.baseHP + uHP) * level) / 10) + baseStatMod);
+        currentHP = HP;
         ATK = Mathf.RoundToInt((((data.baseATK + uATK) * level) / 10) + baseStatMod);
         DEF = Mathf.RoundToInt((((data.baseDEF + uDEF) * level) / 10) + baseStatMod);
         SATK = Mathf.RoundToInt((((data.baseSATK + uSATK) * level) / 10) + baseStatMod);
