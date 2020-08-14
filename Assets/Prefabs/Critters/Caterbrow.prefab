@@ -170,6 +170,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   data: {fileID: 11400000, guid: 1b91370817100c74997e59711d072954, type: 2}
+  level: 4
   critterController: {fileID: 2666431857533467744}
   behaviourController: {fileID: -8711402173201733670}
   critterState: {fileID: -6527597468516335127}
@@ -182,6 +183,7 @@ MonoBehaviour:
   emoteController: {fileID: 4128051003700481190}
   target: {fileID: 0}
   detectRadius: 7
+  speed: 0
   normalBehaviour: {fileID: 0}
   threatenedBehaviour: {fileID: 0}
   interactBehaviour: {fileID: 0}
