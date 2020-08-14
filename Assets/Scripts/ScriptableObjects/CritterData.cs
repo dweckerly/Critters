@@ -5,7 +5,10 @@ using UnityEngine;
 public class CritterData : InteractableData
 {
     public GameObject prefab;
+    public Sprite critterSprite;
     public string critterName;
+    [TextArea(3, 10)]
+    public string description;
     public CritterType type;
     public CritterSize size;
 

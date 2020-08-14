@@ -13,7 +13,9 @@ MonoBehaviour:
   m_Name: Caterbrow
   m_EditorClassIdentifier: 
   prefab: {fileID: 7146954654363853646, guid: ff11ba3446b6a50479c4ecf934c16485, type: 3}
+  critterSprite: {fileID: 21300000, guid: 672426ef3bf516943a6dd17c2ddbee1f, type: 3}
   critterName: Caterbrow
+  description: Here is a great and in depth description for this wild and wacky critter!
   type: 1
   size: 0
   baseHP: 4

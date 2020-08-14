@@ -13,7 +13,9 @@ MonoBehaviour:
   m_Name: Wormado-N
   m_EditorClassIdentifier: 
   prefab: {fileID: 5606349774447441510, guid: d4293f43ebc1eef48ad82823d053676f, type: 3}
+  critterSprite: {fileID: 21300000, guid: df1d23f59ebf931419a4d795b0b590e6, type: 3}
   critterName: Wormado
+  description: Here is a great and in depth description for this wild and wacky critter!
   type: 1
   size: 0
   baseHP: 3

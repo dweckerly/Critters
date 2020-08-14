@@ -21,6 +21,8 @@ public class CritterStats
     public int uSDEF;
     public int uSPD;
 
+    public int currentHP;
+
     int minUniqueModifier = 1;
     int maxUniqueModifier = 25;
 

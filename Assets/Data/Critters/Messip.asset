@@ -13,7 +13,9 @@ MonoBehaviour:
   m_Name: Messip
   m_EditorClassIdentifier: 
   prefab: {fileID: 4918970002002137855, guid: 78cfd0775d9831d4daf01e29c34f076b, type: 3}
+  critterSprite: {fileID: 21300000, guid: cdf090bbd1cbbc54e9176941da0b2fcb, type: 3}
   critterName: Messip
+  description: Here is a great and in depth description for this wild and wacky critter!
   type: 0
   size: 0
   baseHP: 6

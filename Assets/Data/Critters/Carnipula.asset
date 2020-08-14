@@ -13,7 +13,9 @@ MonoBehaviour:
   m_Name: Carnipula
   m_EditorClassIdentifier: 
   prefab: {fileID: 3350358810986010545, guid: adc663ebf79215b44975d2aa34f72d73, type: 3}
+  critterSprite: {fileID: 21300000, guid: 963cdd3cc92bc0c4bb6f278809db143c, type: 3}
   critterName: Carnipula
+  description: Here is a great and in depth description for this wild and wacky critter!
   type: 2
   size: 0
   baseHP: 6
