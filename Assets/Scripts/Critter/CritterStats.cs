@@ -12,6 +12,7 @@ public class CritterStats
     public int SDEF;
     public int SPD;
     public int XP;
+    public int nextLevelXP;
 
     public int uHP;
     public int uATK;
@@ -24,6 +25,7 @@ public class CritterStats
     int maxUniqueModifier = 15;
 
     int baseStatMod = 5;
+    int baseXP = 10;
 
     public CritterStats(CritterData _data, int _level)
     {
@@ -34,6 +36,8 @@ public class CritterStats
 
     void InitializeStats()
     {
+        XP = Mathf.RoundToInt(baseXP * (Mathf.Pow(level + 1, 3)));
+        nextLevelXP = Mathf.RoundToInt(baseXP * (Mathf.Pow(level + 1, 3)));
         GenerateUniqueValues();
         CalculateStats();
     }
@@ -58,8 +62,19 @@ public class CritterStats
         uSPD = Random.Range(minUniqueModifier, maxUniqueModifier + 1);
     }
 
-    public void LevelUp()
+    public void AddXP(int xp)
     {
-        
+        XP += xp;
+        if(XP >= nextLevelXP)
+        {
+            LevelUp();
+        }
+    }
+
+    void LevelUp()
+    {
+        level++;
+        nextLevelXP = Mathf.RoundToInt(baseXP * (Mathf.Pow(level, 3)));
+        CalculateStats();
     }
 }
