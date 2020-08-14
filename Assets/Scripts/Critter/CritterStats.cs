@@ -29,16 +29,17 @@ public class CritterStats
     int baseStatMod = 5;
     int baseXP = 10;
 
-    public CritterStats(CritterData _data, int _level)
+    public CritterStats(CritterData _data, int _level, int _currentHP)
     {
         data = _data;
         level = _level;
         InitializeStats();
+        currentHP = Mathf.CeilToInt(HP * (_currentHP / data.health));
     }
 
     void InitializeStats()
     {
-        XP = Mathf.RoundToInt(baseXP * (Mathf.Pow(level + 1, 3)));
+        XP = Mathf.RoundToInt(baseXP * (Mathf.Pow(level, 3)));
         nextLevelXP = Mathf.RoundToInt(baseXP * (Mathf.Pow(level + 1, 3)));
         GenerateUniqueValues();
         CalculateStats();

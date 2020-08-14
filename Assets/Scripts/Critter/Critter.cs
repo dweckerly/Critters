@@ -77,7 +77,7 @@ public class Critter : MonoBehaviour
 
     private void Start()
     {
-        critterStats = new CritterStats(data, level);
+        critterStats = new CritterStats(data, level, critterHealth.GetCurrentHealth());
         speed = data.speed;
         atkDamage = data.atkDamage;
         atkSpeed = data.atkSpeed;

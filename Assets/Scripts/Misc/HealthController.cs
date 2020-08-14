@@ -14,4 +14,9 @@ public abstract class HealthController : MonoBehaviour
     {
         currentHealth -= dmg;
     }
+
+    public int GetCurrentHealth()
+    {
+        return currentHealth;
+    }
 }
