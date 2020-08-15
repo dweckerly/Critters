@@ -6,6 +6,20 @@ public class StealBehaviour : InteractBehaviour
 {
     bool stoleItem;
 
+    public override bool BehaviourTrigger(Transform target)
+    {
+        PlayerInterface playerInterface = target.GetComponent<PlayerInterface>();
+        if (playerInterface != null)
+        {
+            InventoryManager inv = playerInterface.inventory;
+            if (inv != null && inv.inventory.items.Count > 0)
+            {
+                return true;
+            }
+        }
+        return false;
+    }
+
     public override void DoBehaviour()
     {
         if(!stoleItem)

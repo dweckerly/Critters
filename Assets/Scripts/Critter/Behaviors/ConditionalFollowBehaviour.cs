@@ -1,23 +1,16 @@
-﻿public abstract class ConditionalFollowBehaviour : FollowBehaviour
+﻿using UnityEngine;
+
+public abstract class ConditionalFollowBehaviour : FollowBehaviour
 {
-    public override void DoBehaviour()
+    public override bool BehaviourTrigger(Transform target)
     {
-        if (!critter.IsWithinDetectDistance())
-        {
-            critter.target = null;
-        }
-        else
-        {
-            if (FollowCondition())
-            {
-                base.DoBehaviour();
-            }
-            else
-            {
-                critter.critterController.MoveAwayFromTarget();
-            }
-        }
+        return FollowCondition(target);
     }
 
-    public abstract bool FollowCondition();
+    public override void DoBehaviour()
+    {
+        base.DoBehaviour();
+    }
+
+    public abstract bool FollowCondition(Transform target);
 }

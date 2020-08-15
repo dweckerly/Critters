@@ -29,8 +29,7 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 1, z: 0}
   m_LocalScale: {x: 2.1, y: 1.9, z: 1}
-  m_Children:
-  - {fileID: 6840768578085922600}
+  m_Children: []
   m_Father: {fileID: 4832856530882385651}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -135,6 +134,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 8397789710238868049}
+  - {fileID: 6840768578085922600}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -151,6 +151,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   data: {fileID: 11400000, guid: 9e8c1250d29310842a24721b50a9204c, type: 2}
+  level: 0
   critterController: {fileID: 7252090751707432260}
   behaviourController: {fileID: 268653879216552010}
   critterState: {fileID: 7298068272203390527}
@@ -163,10 +164,12 @@ MonoBehaviour:
   emoteController: {fileID: 4834529905357217239}
   target: {fileID: 0}
   detectRadius: 7
+  speed: 0
   normalBehaviour: {fileID: 0}
   threatenedBehaviour: {fileID: 0}
   interactBehaviour: {fileID: 0}
   sleepBehaviour: {fileID: 0}
+  critterInteractions: []
 --- !u!114 &7252090751707432260
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -251,7 +254,7 @@ PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
-    m_TransformParent: {fileID: 8397789710238868049}
+    m_TransformParent: {fileID: 4832856530882385651}
     m_Modifications:
     - target: {fileID: 756129990057898416, guid: d9678a6333d71e445bd25b34c3bc1672,
         type: 3}
@@ -266,7 +269,7 @@ PrefabInstance:
     - target: {fileID: 1430624090692195020, guid: d9678a6333d71e445bd25b34c3bc1672,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.2631579
+      value: 1.5
       objectReference: {fileID: 0}
     - target: {fileID: 1430624090692195020, guid: d9678a6333d71e445bd25b34c3bc1672,
         type: 3}
@@ -296,7 +299,7 @@ PrefabInstance:
     - target: {fileID: 1430624090692195020, guid: d9678a6333d71e445bd25b34c3bc1672,
         type: 3}
       propertyPath: m_RootOrder
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1430624090692195020, guid: d9678a6333d71e445bd25b34c3bc1672,
         type: 3}
@@ -316,12 +319,12 @@ PrefabInstance:
     - target: {fileID: 1430624090692195020, guid: d9678a6333d71e445bd25b34c3bc1672,
         type: 3}
       propertyPath: m_LocalScale.x
-      value: 0.47619048
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1430624090692195020, guid: d9678a6333d71e445bd25b34c3bc1672,
         type: 3}
       propertyPath: m_LocalScale.y
-      value: 0.5263158
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d9678a6333d71e445bd25b34c3bc1672, type: 3}

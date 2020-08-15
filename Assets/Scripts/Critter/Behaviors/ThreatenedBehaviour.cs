@@ -5,6 +5,11 @@ public class ThreatenedBehaviour : CritterBehaviour
     float safeTeimInterval = 3f;
     float startTime;
 
+    public override bool BehaviourTrigger(Transform target)
+    {
+        return true;
+    }
+
     public override void Initialize()
     {
         startTime = Time.time;

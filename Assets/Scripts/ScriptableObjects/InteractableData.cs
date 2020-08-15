@@ -4,8 +4,8 @@ public enum State
 {
     Normal,
     Interacting,
+    Sleep,
     Threatened,
-    Sleep
 }
 
 public enum CritterType

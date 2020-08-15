@@ -34,14 +34,17 @@ MonoBehaviour:
   critterInteractions:
   - interactableTag: 2
     inducedState: 2
+    priority: 3
     behaviour: {fileID: 1102716177779491520, guid: 22c3f63114d5c944eba16d771b16735b,
       type: 3}
   - interactableTag: 0
     inducedState: 1
+    priority: 1
     behaviour: {fileID: 1102716177779491520, guid: 22c3f63114d5c944eba16d771b16735b,
       type: 3}
   - interactableTag: 1
     inducedState: 1
+    priority: 2
     behaviour: {fileID: 3856480899089385946, guid: 22c3f63114d5c944eba16d771b16735b,
       type: 3}
   defaultNormalBehaviour: {fileID: 8777040767825448462, guid: 22c3f63114d5c944eba16d771b16735b,

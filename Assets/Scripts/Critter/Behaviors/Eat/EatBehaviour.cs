@@ -5,30 +5,22 @@ public class EatBehaviour : InteractBehaviour
     public FoodType diet;
     Food foodTarget;
 
+    public override bool BehaviourTrigger(Transform target)
+    {
+        foodTarget = target.GetComponent<Food>();
+        if (foodTarget != null && !critter.critterHunger.IsFull() && CritterEatsThis(foodTarget.data.foodType))
+        {
+            return true;
+        }
+        return false;
+    }
+
     public override void DoBehaviour()
     {
-        if(critter.target != null)
+        base.DoBehaviour();
+        if (critter.IsWithinInteractDistance())
         {
-            foodTarget = critter.target.GetComponent<Food>();
-        }
-        if (foodTarget != null)
-        {
-            if (!critter.critterHunger.IsFull() && CritterEatsThis(foodTarget.data.foodType))
-            {
-                base.DoBehaviour();
-                if (critter.IsWithinInteractDistance())
-                {
-                    Eat();
-                }
-            }
-            else
-            {
-                critter.normalBehaviour.DoBehaviour();
-            }
-        }
-        else
-        {
-            critter.normalBehaviour.DoBehaviour();
+            Eat();
         }
     }
 

@@ -104,17 +104,17 @@ public class Critter : MonoBehaviour
                 {
                     foreach (CritterInteraction interact in critterInteractions)
                     {
-                        if (hitColliders[i].gameObject.CompareTag(interact.interactableTag.ToString()))
+                        if (hitColliders[i].gameObject.CompareTag(interact.interactableTag.ToString()) && critterState.state < interact.inducedState)
                         {
-                            if (interact.inducedState == State.Threatened)
+                            Transform currentTarget = target;
+                            target = hitColliders[i].transform;
+                            if(interact.behaviour.BehaviourTrigger(target))
                             {
-                                target = hitColliders[i].transform;
                                 behaviourController.SetBehaviour(interact);
                             }
-                            else if (target == null)
+                            else
                             {
-                                target = hitColliders[i].transform;
-                                behaviourController.SetBehaviour(interact);
+                                target = currentTarget;
                             }
                         }
                     }

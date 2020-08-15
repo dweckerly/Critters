@@ -7,6 +7,7 @@ public class CritterBehaviourController : MonoBehaviour
     private void Start()
     {
         critter = GetComponent<Critter>();
+        SetState(State.Normal);
     }
 
     public void SetBehaviour(CritterInteraction interaction)

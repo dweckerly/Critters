@@ -12,9 +12,9 @@ public class DropItemConditionalFollow : ConditionalFollowBehaviour
         targetObject = critter.data.dropItem.GetComponent<Item>();
     }
 
-    public override bool FollowCondition()
+    public override bool FollowCondition(Transform target)
     {
-        PlayerInterface playerInterface = critter.target.GetComponent<PlayerInterface>();
+        PlayerInterface playerInterface = target.GetComponent<PlayerInterface>();
         if (playerInterface != null)
         {
             if(playerInterface.inventory.inventory.items.Count > 0)

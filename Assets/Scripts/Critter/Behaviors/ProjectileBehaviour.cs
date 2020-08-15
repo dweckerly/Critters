@@ -12,6 +12,11 @@ public class ProjectileBehaviour : CritterBehaviour
     float fireInterval;
     Collider sourceCollider;
 
+    public override bool BehaviourTrigger(Transform target)
+    {
+        return true;
+    }
+
     public override void Initialize()
     {
         sourceCollider = critter.gameObject.GetComponent<Collider>();
