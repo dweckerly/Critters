@@ -33,20 +33,20 @@ MonoBehaviour:
   activeTimes: 0000000002000000
   critterInteractions:
   - interactableTag: 0
-    inducedState: 2
-    priority: 2
+    inducedState: 4
     behaviour: {fileID: 5949815602845411733, guid: 22c3f63114d5c944eba16d771b16735b,
       type: 3}
   - interactableTag: 1
-    inducedState: 1
-    priority: 1
+    inducedState: 2
     behaviour: {fileID: 1101199214837673013, guid: 22c3f63114d5c944eba16d771b16735b,
       type: 3}
   defaultNormalBehaviour: {fileID: 8777040767825448462, guid: 22c3f63114d5c944eba16d771b16735b,
     type: 3}
-  defaultThreatenedBehaviour: {fileID: 5949815602845411733, guid: 22c3f63114d5c944eba16d771b16735b,
-    type: 3}
   defaultInteractBehaviour: {fileID: 3526239116512407378, guid: 22c3f63114d5c944eba16d771b16735b,
     type: 3}
+  defaultEatingBehaviour: {fileID: 1101199214837673013, guid: 22c3f63114d5c944eba16d771b16735b,
+    type: 3}
   defaultSleepBehaviour: {fileID: 6057808325782301101, guid: 22c3f63114d5c944eba16d771b16735b,
+    type: 3}
+  defaultThreatenedBehaviour: {fileID: 5949815602845411733, guid: 22c3f63114d5c944eba16d771b16735b,
     type: 3}
