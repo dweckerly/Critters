@@ -21,7 +21,7 @@ public abstract class ConditionalFollowBehaviour : FollowBehaviour
             }
             else
             {
-                critter = null;
+                critter.target = null;
             }
         }
     }

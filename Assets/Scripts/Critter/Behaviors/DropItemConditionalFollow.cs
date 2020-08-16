@@ -14,22 +14,25 @@ public class DropItemConditionalFollow : ConditionalFollowBehaviour
 
     public override bool FollowCondition()
     {
-        PlayerInterface playerInterface = critter.target.GetComponent<PlayerInterface>();
-        if (playerInterface != null)
+        if(critter != null && critter.target != null)
         {
-            if(playerInterface.inventory.inventory.items.Count > 0)
+            PlayerInterface playerInterface = critter.target.GetComponent<PlayerInterface>();
+            if (playerInterface != null)
             {
-                int count = 0;
-                List<InventoryItem> playerItems = playerInterface.inventory.inventory.items;
-                foreach (InventoryItem item in playerItems)
+                if (playerInterface.inventory.inventory.items.Count > 0)
                 {
-                    if (item.data == targetObject.data)
+                    int count = 0;
+                    List<InventoryItem> playerItems = playerInterface.inventory.inventory.items;
+                    foreach (InventoryItem item in playerItems)
                     {
-                        count += item.amount;
-                    }
-                    if (count >= itemsNeeded)
-                    {
-                        return true;
+                        if (item.data == targetObject.data)
+                        {
+                            count += item.amount;
+                        }
+                        if (count >= itemsNeeded)
+                        {
+                            return true;
+                        }
                     }
                 }
             }

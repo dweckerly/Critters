@@ -23,7 +23,7 @@ public class CritterBehaviourController : MonoBehaviour
                 }
                 else
                 {
-                    critter.interactBehaviour = UpdateBehaviourComponent( critter.data.defaultInteractBehaviour);
+                    critter.interactBehaviour = UpdateBehaviourComponent(critter.data.defaultInteractBehaviour);
                 }
                 break;
             case State.Eating:

@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-public class EatBehaviour : InteractBehaviour
+public class EatBehaviour : CritterBehaviour
 {
     public FoodType diet;
     Food foodTarget;
@@ -15,14 +15,25 @@ public class EatBehaviour : InteractBehaviour
         return false;
     }
 
+    public override void Initialize() { }
+
     public override void DoBehaviour()
     {
-        base.DoBehaviour();
         if (critter.IsWithinInteractDistance())
         {
             Eat();
         }
+        else if (!critter.IsWithinDetectDistance())
+        {
+            critter.target = null;
+        }
+        else
+        {
+            critter.critterController.MoveTowardsTarget();
+        }
     }
+
+    public override void EndBehaviour() { }
 
     bool CritterEatsThis(FoodType targetFoodType)
     {
