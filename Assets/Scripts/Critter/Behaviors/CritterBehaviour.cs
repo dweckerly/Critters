@@ -4,7 +4,7 @@ public abstract class CritterBehaviour : MonoBehaviour
 {
     public Critter critter;
 
-    public abstract bool BehaviourTrigger(Transform target);
+    public abstract bool BehaviourTrigger(Critter _criter);
 
     public void StartBehaviour()
     {

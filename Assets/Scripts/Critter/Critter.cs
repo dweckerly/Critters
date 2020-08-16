@@ -37,11 +37,13 @@ public class Critter : MonoBehaviour
     [HideInInspector]
     public CritterBehaviour normalBehaviour;
     [HideInInspector]
-    public CritterBehaviour threatenedBehaviour;
-    [HideInInspector]
     public CritterBehaviour interactBehaviour;
     [HideInInspector]
+    public CritterBehaviour eatingBehaviour;
+    [HideInInspector]
     public CritterBehaviour sleepBehaviour;
+    [HideInInspector]
+    public CritterBehaviour threatenedBehaviour;
 
     public List<CritterInteraction> critterInteractions;
     GameObject dropItem;
@@ -56,9 +58,10 @@ public class Critter : MonoBehaviour
     private void Initialize()
     {
         normalBehaviour = (CritterBehaviour)gameObject.AddComponent(data.defaultNormalBehaviour.GetType());
-        threatenedBehaviour = (CritterBehaviour)gameObject.AddComponent(data.defaultThreatenedBehaviour.GetType());
         interactBehaviour = (CritterBehaviour)gameObject.AddComponent(data.defaultInteractBehaviour.GetType());
+        eatingBehaviour = (CritterBehaviour)gameObject.AddComponent(data.defaultEatingBehaviour.GetType());
         sleepBehaviour = (CritterBehaviour)gameObject.AddComponent(data.defaultSleepBehaviour.GetType());
+        threatenedBehaviour = (CritterBehaviour)gameObject.AddComponent(data.defaultThreatenedBehaviour.GetType());
         critterInteractions = new List<CritterInteraction>(data.critterInteractions);
         foreach (CritterInteraction interaction in critterInteractions)
         {
@@ -108,13 +111,20 @@ public class Critter : MonoBehaviour
                         {
                             Transform currentTarget = target;
                             target = hitColliders[i].transform;
-                            if(interact.behaviour.BehaviourTrigger(target))
+                            if(interact.behaviour != null)
                             {
-                                behaviourController.SetBehaviour(interact);
+                                if (interact.behaviour.BehaviourTrigger(this))
+                                {
+                                    behaviourController.SetBehaviour(interact);
+                                }
+                                else
+                                {
+                                    target = currentTarget;
+                                }
                             }
                             else
                             {
-                                target = currentTarget;
+                                behaviourController.SetBehaviour(interact);
                             }
                         }
                     }

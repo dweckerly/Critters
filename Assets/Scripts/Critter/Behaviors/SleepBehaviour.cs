@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class SleepBehaviour : CritterBehaviour
 {
-    public override bool BehaviourTrigger(Transform target)
+    public override bool BehaviourTrigger(Critter _critter)
     {
         return true;
     }

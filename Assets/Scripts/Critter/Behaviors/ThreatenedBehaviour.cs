@@ -5,7 +5,7 @@ public class ThreatenedBehaviour : CritterBehaviour
     float safeTeimInterval = 3f;
     float startTime;
 
-    public override bool BehaviourTrigger(Transform target)
+    public override bool BehaviourTrigger(Critter _critter)
     {
         return true;
     }
@@ -21,10 +21,7 @@ public class ThreatenedBehaviour : CritterBehaviour
         ReturnToNormalBehaviourCheck();
     }
 
-    public override void EndBehaviour()
-    {
-        critter.target = null;
-    }
+    public override void EndBehaviour() { }
 
 
     public void ReturnToNormalBehaviourCheck()
@@ -42,7 +39,7 @@ public class ThreatenedBehaviour : CritterBehaviour
         {
             if (Time.time > startTime + safeTeimInterval)
             {
-                critter.behaviourController.ReturnToNormalState();
+                critter.target = null;
             }
         }
     }

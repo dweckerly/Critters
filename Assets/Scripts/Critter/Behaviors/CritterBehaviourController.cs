@@ -45,6 +45,16 @@ public class CritterBehaviourController : MonoBehaviour
                     critter.sleepBehaviour = UpdateBehaviourComponent(critter.data.defaultSleepBehaviour);
                 }
                 break;
+            case State.Eating:
+                if(interaction.behaviour != null)
+                {
+                    critter.eatingBehaviour = UpdateBehaviourComponent(interaction.behaviour);
+                }
+                else
+                {
+                    critter.eatingBehaviour = UpdateBehaviourComponent(critter.data.defaultSleepBehaviour);
+                }
+                break;
         }
         SetState(interaction.inducedState);
     }

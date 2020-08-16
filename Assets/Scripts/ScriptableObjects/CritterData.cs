@@ -32,7 +32,8 @@ public class CritterData : InteractableData
 
     public List<CritterInteraction> critterInteractions;
     public CritterBehaviour defaultNormalBehaviour;
-    public CritterBehaviour defaultThreatenedBehaviour;
     public CritterBehaviour defaultInteractBehaviour;
+    public CritterBehaviour defaultEatingBehaviour;
     public CritterBehaviour defaultSleepBehaviour;
+    public CritterBehaviour defaultThreatenedBehaviour;
 }

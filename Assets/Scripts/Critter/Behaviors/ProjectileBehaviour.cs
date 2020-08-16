@@ -12,7 +12,7 @@ public class ProjectileBehaviour : CritterBehaviour
     float fireInterval;
     Collider sourceCollider;
 
-    public override bool BehaviourTrigger(Transform target)
+    public override bool BehaviourTrigger(Critter _critter)
     {
         return true;
     }

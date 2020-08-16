@@ -10,6 +10,7 @@ public class CritterState : MonoBehaviour
     {
         { "Normal", "NormalState" },
         { "Interacting", "InteractingState" },
+        { "Eating", "EatingState" },
         { "Sleep", "SleepState" },
         { "Threatened", "ThreatenedState" }
     };
@@ -47,15 +48,15 @@ public class CritterState : MonoBehaviour
         ChangeState();
     }
 
-    IEnumerator ThreatenedState()
+    IEnumerator EatingState()
     {
-        critter.threatenedBehaviour.StartBehaviour();
+        critter.eatingBehaviour.StartBehaviour();
         while (state == State.Threatened)
         {
-            critter.threatenedBehaviour.DoBehaviour();
+            critter.eatingBehaviour.DoBehaviour();
             yield return 0;
         }
-        critter.threatenedBehaviour.EndBehaviour();
+        critter.eatingBehaviour.EndBehaviour();
         ChangeState();
     }
 
@@ -68,6 +69,18 @@ public class CritterState : MonoBehaviour
             yield return 0;
         }
         critter.sleepBehaviour.EndBehaviour();
+        ChangeState();
+    }
+
+    IEnumerator ThreatenedState()
+    {
+        critter.threatenedBehaviour.StartBehaviour();
+        while (state == State.Threatened)
+        {
+            critter.threatenedBehaviour.DoBehaviour();
+            yield return 0;
+        }
+        critter.threatenedBehaviour.EndBehaviour();
         ChangeState();
     }
 

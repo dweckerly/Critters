@@ -6,9 +6,9 @@ public class StealBehaviour : InteractBehaviour
 {
     bool stoleItem;
 
-    public override bool BehaviourTrigger(Transform target)
+    public override bool BehaviourTrigger(Critter _critter)
     {
-        PlayerInterface playerInterface = target.GetComponent<PlayerInterface>();
+        PlayerInterface playerInterface = _critter.target.GetComponent<PlayerInterface>();
         if (playerInterface != null)
         {
             InventoryManager inv = playerInterface.inventory;
