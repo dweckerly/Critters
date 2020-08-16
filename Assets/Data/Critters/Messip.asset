@@ -42,7 +42,7 @@ MonoBehaviour:
       type: 3}
   defaultNormalBehaviour: {fileID: -8131517216454685297, guid: 22c3f63114d5c944eba16d771b16735b,
     type: 3}
-  defaultInteractBehaviour: {fileID: 3526239116512407378, guid: 22c3f63114d5c944eba16d771b16735b,
+  defaultInteractBehaviour: {fileID: 8765199581011821589, guid: 22c3f63114d5c944eba16d771b16735b,
     type: 3}
   defaultEatingBehaviour: {fileID: -8899004667510002354, guid: 22c3f63114d5c944eba16d771b16735b,
     type: 3}

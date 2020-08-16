@@ -15,17 +15,8 @@ public class CritterBehaviourController : MonoBehaviour
         ReturnToNormalState();
         switch (interaction.inducedState)
         {
-            case State.Threatened:
-                if (interaction.behaviour != null)
-                {
-                    critter.threatenedBehaviour = UpdateBehaviourComponent(interaction.behaviour);
-                }
-                else
-                {
-                    critter.threatenedBehaviour = UpdateBehaviourComponent(critter.data.defaultThreatenedBehaviour);
-                }
-                break;
             case State.Interacting:
+                Debug.Log("Setting INTERACT Behaviour");
                 if (interaction.behaviour != null)
                 {
                     critter.interactBehaviour = UpdateBehaviourComponent(interaction.behaviour);
@@ -33,6 +24,17 @@ public class CritterBehaviourController : MonoBehaviour
                 else
                 {
                     critter.interactBehaviour = UpdateBehaviourComponent( critter.data.defaultInteractBehaviour);
+                }
+                break;
+            case State.Eating:
+                Debug.Log("Setting EATING Behaviour");
+                if (interaction.behaviour != null)
+                {
+                    critter.eatingBehaviour = UpdateBehaviourComponent(interaction.behaviour);
+                }
+                else
+                {
+                    critter.eatingBehaviour = UpdateBehaviourComponent(critter.data.defaultEatingBehaviour);
                 }
                 break;
             case State.Sleep:
@@ -45,14 +47,15 @@ public class CritterBehaviourController : MonoBehaviour
                     critter.sleepBehaviour = UpdateBehaviourComponent(critter.data.defaultSleepBehaviour);
                 }
                 break;
-            case State.Eating:
-                if(interaction.behaviour != null)
+            case State.Threatened:
+                Debug.Log("Setting THREATENED Behaviour");
+                if (interaction.behaviour != null)
                 {
-                    critter.eatingBehaviour = UpdateBehaviourComponent(interaction.behaviour);
+                    critter.threatenedBehaviour = UpdateBehaviourComponent(interaction.behaviour);
                 }
                 else
                 {
-                    critter.eatingBehaviour = UpdateBehaviourComponent(critter.data.defaultSleepBehaviour);
+                    critter.threatenedBehaviour = UpdateBehaviourComponent(critter.data.defaultThreatenedBehaviour);
                 }
                 break;
         }
