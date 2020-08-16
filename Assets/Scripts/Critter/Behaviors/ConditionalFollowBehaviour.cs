@@ -4,13 +4,27 @@ public abstract class ConditionalFollowBehaviour : FollowBehaviour
 {
     public override bool BehaviourTrigger(Critter _critter)
     {
-        return FollowCondition(_critter);
+        return true;
     }
 
     public override void DoBehaviour()
     {
-        base.DoBehaviour();
+        if(FollowCondition())
+        {
+            base.DoBehaviour();
+        }
+        else
+        {
+            if(critter.IsWithinDetectDistance())
+            {
+                critter.critterController.MoveAwayFromTarget();
+            }
+            else
+            {
+                critter = null;
+            }
+        }
     }
 
-    public abstract bool FollowCondition(Critter _critter);
+    public abstract bool FollowCondition();
 }
