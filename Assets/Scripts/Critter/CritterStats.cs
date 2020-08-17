@@ -50,7 +50,9 @@ public class CritterStats
     void InitializeStats()
     {
         XP = Mathf.RoundToInt(baseXP * (Mathf.Pow(level, 3)));
+        XP += Mathf.RoundToInt((XP / 6f) * Random.Range(-1f, 1f));
         nextLevelXP = Mathf.RoundToInt(baseXP * (Mathf.Pow(level + 1, 3)));
+        nextLevelXP += Mathf.RoundToInt((nextLevelXP / 6f) * Random.Range(-1f, 1f));
         GenerateUniqueValues();
         DeterminMutations();
         SetScaleFactor();
@@ -125,6 +127,7 @@ public class CritterStats
     {
         level++;
         nextLevelXP = Mathf.RoundToInt(baseXP * (Mathf.Pow(level, 3)));
+        nextLevelXP += Mathf.RoundToInt((nextLevelXP / 6f) * Random.Range(-1f, 1f));
         CalculateStats();
     }
 }

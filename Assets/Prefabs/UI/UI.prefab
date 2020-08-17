@@ -350,7 +350,7 @@ MonoBehaviour:
   m_HandleRect: {fileID: 4662970637706468275}
   m_Direction: 2
   m_Value: 1.0000006
-  m_Size: 0.68
+  m_Size: 0.67999995
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -6165,11 +6165,29 @@ MonoBehaviour:
   critterName: {fileID: 7464467952596588240}
   critterDescription: {fileID: 7464467951024425110}
   critterATK: {fileID: 7464467951967903160}
+  critterATKImages:
+  - {fileID: 7464467950925478135}
+  - {fileID: 7464467952589553013}
   critterDEF: {fileID: 7464467951069782198}
+  critterDEFImages:
+  - {fileID: 7464467952525471439}
+  - {fileID: 7464467951062924023}
   critterSATK: {fileID: 7464467951366132988}
+  critterSATKImages:
+  - {fileID: 7464467951435904027}
+  - {fileID: 7464467952099937608}
   critterSDEF: {fileID: 7464467952690888911}
+  critterSDEFImages:
+  - {fileID: 7464467952448363879}
+  - {fileID: 7464467952829320285}
   critterSPD: {fileID: 7464467952053124969}
+  critterSPDImages:
+  - {fileID: 7464467951026446022}
+  - {fileID: 7464467950773995083}
   critterHP: {fileID: 7464467952140686058}
+  critterHPImages:
+  - {fileID: 7464467952165767926}
+  - {fileID: 7464467952105606610}
   critterLevel: {fileID: 4207796794797916211}
   critterXP: {fileID: 4261151315128219814}
 --- !u!1 &7464467951899401107
