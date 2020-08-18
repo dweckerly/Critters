@@ -3,7 +3,7 @@ using UnityEngine;
 
 public class PlayerTeam : MonoBehaviour
 {
-    int maxCritters = 3;
+    int maxCritters = 6;
 
     public List<CritterStats> critters = new List<CritterStats>();
 
