@@ -87,21 +87,24 @@ public class CritterPopulator : MonoBehaviour
         SpawnPoint[] spawnPoints = FindObjectsOfType<SpawnPoint>();
         Critter[] critters = GetWanderingCritters();
 
-        for (int i = 0; i < critters.Length; i++)
+        if(spawnPoints.Length > 0)
         {
-            // Need to check for if Hiding Place already has a critter
-            // currently skipping a critter if hiding place location is already populated
-            int spawnIndex = Random.Range(0, spawnPoints.Length);
-            if (!spawnPoints[spawnIndex].hasCritter)
+            for (int i = 0; i < critters.Length; i++)
             {
-                spawnPoints[spawnIndex].hasCritter = true;
-                critters[i].level = Random.Range(1, 5);
-                Instantiate(critters[i], spawnPoints[spawnIndex].transform.position, Quaternion.identity);
+                // Need to check for if Hiding Place already has a critter
+                // currently skipping a critter if hiding place location is already populated
+                int spawnIndex = Random.Range(0, spawnPoints.Length);
+                if (!spawnPoints[spawnIndex].hasCritter)
+                {
+                    spawnPoints[spawnIndex].hasCritter = true;
+                    critters[i].level = Random.Range(1, 5);
+                    Instantiate(critters[i], spawnPoints[spawnIndex].transform.position, Quaternion.identity);
+                }
             }
-        }
-        foreach(SpawnPoint spawnPoint in spawnPoints) 
-        {
-            Destroy(spawnPoint);
+            foreach (SpawnPoint spawnPoint in spawnPoints)
+            {
+                Destroy(spawnPoint);
+            }
         }
     }
 }
