@@ -72,9 +72,11 @@ public class Critter : MonoBehaviour
         }
         dropItem = data.dropItem;
         scaleVariance = Random.Range(0.75f, 1.25f);
-        float yPosition = scaleVariance / 2f;
-        transform.localScale = new Vector3(scaleVariance, scaleVariance, 1);
-        transform.position = new Vector3(transform.position.x, yPosition, transform.position.z);
+        //float yPosition = scaleVariance / 2f;
+        float xScale = transform.localScale.x;
+        float yScale = transform.localScale.y;
+        transform.localScale = new Vector3(scaleVariance * xScale, scaleVariance * yScale, 1);
+        //transform.position = new Vector3(transform.position.x, yPosition, transform.position.z);
         interactDistance *= scaleVariance;
     }
 
