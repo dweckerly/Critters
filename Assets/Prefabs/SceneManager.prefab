@@ -93,7 +93,18 @@ MonoBehaviour:
         m_CallState: 2
   critterUIEvent:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 2422257367091879352}
+        m_MethodName: Open
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &2251837163828436267
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -110,7 +121,7 @@ MonoBehaviour:
   inventory: {fileID: 0}
   inventoryPanel: {fileID: 0}
   inventoryItemParent: {fileID: 0}
-  inventoryItem: {fileID: 6467242703888224241, guid: 9b1530005cf8de64e999d15767933cb5,
+  inventoryItem: {fileID: 2756921878967478619, guid: 9b1530005cf8de64e999d15767933cb5,
     type: 3}
   itemDetails: {fileID: 0}
   useButton: {fileID: 0}
@@ -132,7 +143,8 @@ MonoBehaviour:
   playerTeam: {fileID: 0}
   critterPanel: {fileID: 0}
   critterViewParent: {fileID: 0}
-  critterUIObject: {fileID: 0}
+  critterUIObject: {fileID: 1378036976026188103, guid: 0ace17d11fecd5f42b8deb36c33e15f6,
+    type: 3}
   critterDetails: {fileID: 0}
   accompanyButton: {fileID: 0}
   giveItemButton: {fileID: 0}

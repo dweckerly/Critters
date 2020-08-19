@@ -4237,7 +4237,7 @@ MonoBehaviour:
     type: 3}
   m_PrefabInstance: {fileID: 8736232811344057717}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1927013635}
+  m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5198d87b26c14f940af5329727878659, type: 3}
@@ -5230,33 +5230,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!1 &1927013635 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 8736232812099567660, guid: a90b90729d05bfa409874ec825fcc345,
-    type: 3}
-  m_PrefabInstance: {fileID: 8736232811344057717}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &1927013636
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1927013635}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f79314f8390c4e044861bd1d263999ae, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  player: {fileID: 0}
-  playerTeam: {fileID: 0}
-  critterPanel: {fileID: 0}
-  critterViewParent: {fileID: 0}
-  critterUIObject: {fileID: 0}
-  critterDetails: {fileID: 0}
-  accompanyButton: {fileID: 0}
-  giveItemButton: {fileID: 0}
-  releaseButton: {fileID: 0}
 --- !u!1 &1929415481
 GameObject:
   m_ObjectHideFlags: 0
@@ -8543,7 +8516,7 @@ MonoBehaviour:
     type: 3}
   m_PrefabInstance: {fileID: 8736232811344057717}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1927013635}
+  m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f79314f8390c4e044861bd1d263999ae, type: 3}
