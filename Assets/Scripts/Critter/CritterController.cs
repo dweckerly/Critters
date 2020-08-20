@@ -36,11 +36,21 @@ public class CritterController : MonoBehaviour
 		moveDirection.y -= gravity;
 		if (!idle)
         {
+			if(critter == null)
+            {
+				Debug.Log("Critter is null...");
+				critter = GetComponent<Critter>();
+			}
 			if (!critter.animator.GetBool("moving"))
             {
 				critter.animator.SetBool("moving", true);
 			}
 			moveDirection = moveDirection.normalized * critter.speed;
+			if (controller == null)
+			{
+				Debug.Log("Controller is null...");
+				controller = GetComponent<CharacterController>();
+			}
 			controller.Move(moveDirection * Time.deltaTime);
 		}
 	}
