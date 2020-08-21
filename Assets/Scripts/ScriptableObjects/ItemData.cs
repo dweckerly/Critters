@@ -1,5 +1,4 @@
-﻿using UnityEditor.Animations;
-using UnityEngine;
+﻿using UnityEngine;
 
 [CreateAssetMenu(fileName = "ItemData", menuName = "ScriptableObjects/ItemData", order = 3)]
 public class ItemData : ScriptableObject
@@ -14,7 +13,7 @@ public class ItemData : ScriptableObject
     public ItemEffect itemEffect;
 
     public float range;
-    public AnimatorController animatorController;
+    public Animator animatorController;
     public AnimationClip swapOut;
     public AnimationClip swapIn;
     public AnimationClip use;

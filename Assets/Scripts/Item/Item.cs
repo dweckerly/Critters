@@ -23,7 +23,7 @@ public class Item : MonoBehaviour
     private void Awake()
     {
         animator = GetComponent<Animator>();
-        animator.runtimeAnimatorController = data.animatorController;
+        animator = data.animatorController;
         if(data.itemEffect != null)
         {
             itemEffect = (ItemEffect)gameObject.AddComponent(data.itemEffect.GetType());
