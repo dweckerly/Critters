@@ -13,7 +13,7 @@ public class ItemData : ScriptableObject
     public ItemEffect itemEffect;
 
     public float range;
-    public Animator animatorController;
+    public RuntimeAnimatorController animatorController;
     public AnimationClip swapOut;
     public AnimationClip swapIn;
     public AnimationClip use;

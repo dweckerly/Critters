@@ -20,6 +20,7 @@ public class PlayerInput : MonoBehaviour
     private void Awake()
     {
         Cursor.lockState = CursorLockMode.Locked;
+        Cursor.visible = false;
         mouse = new MouseInput(cameraController);
     }
 

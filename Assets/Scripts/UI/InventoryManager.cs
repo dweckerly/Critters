@@ -39,6 +39,7 @@ public class InventoryManager : MonoBehaviour
         player.playerInput.mouse.DisableMouse();
         player.playerInput.DisablePlayerMovement();
         Cursor.lockState = CursorLockMode.None;
+        Cursor.visible = true;
     }
 
     void CloseInventoryPanel()
@@ -46,6 +47,7 @@ public class InventoryManager : MonoBehaviour
         player.playerInput.mouse.EnableMouse();
         player.playerInput.EnablePlayerMovement();
         Cursor.lockState = CursorLockMode.Locked;
+        Cursor.visible = false;
         inventoryPanel.SetActive(false);
     }
 

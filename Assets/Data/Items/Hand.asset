@@ -20,10 +20,12 @@ MonoBehaviour:
   prefab: {fileID: 119171089266607214, guid: 574095d8fb825cb4daf65bedd6497c2c, type: 3}
   itemEffect: {fileID: 0}
   range: 2
-  animatorController: {fileID: 9100000, guid: 77465e3aef576794b978df36549d9f94, type: 2}
+  animatorController: {fileID: 9100000, guid: c8039162d7f9639478cd9ac35bc19c75, type: 2}
   swapOut: {fileID: 7400000, guid: bbc98362460ffeb4f9377b818f79bac2, type: 2}
   swapIn: {fileID: 7400000, guid: fd4da1b32c232734d94d170ed202236a, type: 2}
   use: {fileID: 0}
   catchPS: {fileID: 0}
   critterCatchType: 0
   critterCatchSize: 0
+  foodType: 0
+  decays: 0

@@ -148,5 +148,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   data: {fileID: 11400000, guid: 8f452c6491b00bb40aeaa895fc7307bf, type: 2}
   itemEffect: {fileID: 0}
-  animator: {fileID: 0}
+  animator: {fileID: -852799209487020573}
   hia: {fileID: 0}

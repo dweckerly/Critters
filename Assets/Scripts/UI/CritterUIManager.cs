@@ -38,6 +38,7 @@ public class CritterUIManager : MonoBehaviour
         player.playerInput.mouse.DisableMouse();
         player.playerInput.DisablePlayerMovement();
         Cursor.lockState = CursorLockMode.None;
+        Cursor.visible = true;
     }
 
     void CloseCritterPanel()
@@ -45,6 +46,7 @@ public class CritterUIManager : MonoBehaviour
         player.playerInput.mouse.EnableMouse();
         player.playerInput.EnablePlayerMovement();
         Cursor.lockState = CursorLockMode.Locked;
+        Cursor.visible = false;
         critterPanel.SetActive(false);
     }
 

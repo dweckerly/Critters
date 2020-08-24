@@ -30,3 +30,4 @@ MonoBehaviour:
   critterCatchType: 0
   critterCatchSize: 0
   foodType: 2
+  decays: 0
