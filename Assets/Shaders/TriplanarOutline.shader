@@ -37,8 +37,11 @@
 
 	ENDCG
 
-	SubShader
-	{
+	SubShader {
+		//This shader consists of 2 ways of generating outline that are dynamically switched based on demiliter angle
+		//If vertex normal is pointed away from object origin then custom outline generation is used (based on scaling along the origin-vertex vector)
+		//Otherwise the old-school normal vector scaling is used
+		//This way prevents weird artifacts from being created when using either of the methods
 		//First outline
 		Pass {
 			Tags{ "Queue" = "Geometry" }
@@ -54,19 +57,12 @@
 
 			v2f vert(appdata v) {
 				appdata original = v;
-
 				float3 scaleDir = normalize(v.vertex.xyz - float4(0,0,0,1));
-				//This shader consists of 2 ways of generating outline that are dynamically switched based on demiliter angle
-				//If vertex normal is pointed away from object origin then custom outline generation is used (based on scaling along the origin-vertex vector)
-				//Otherwise the old-school normal vector scaling is used
-				//This way prevents weird artifacts from being created when using either of the methods
 				if (degrees(acos(dot(scaleDir.xyz, v.normal.xyz))) > _Angle) {
 					v.vertex.xyz += normalize(v.normal.xyz) * _FirstOutlineWidth;
-				}
-				else {
+				} else {
 					v.vertex.xyz += scaleDir * _FirstOutlineWidth;
 				}
-
 				v2f o;
 				o.pos = UnityObjectToClipPos(v.vertex);
 				return o;
@@ -94,19 +90,12 @@
 
 			v2f vert(appdata v) {
 				appdata original = v;
-
 				float3 scaleDir = normalize(v.vertex.xyz - float4(0,0,0,1));
-				//This shader consists of 2 ways of generating outline that are dynamically switched based on demiliter angle
-				//If vertex normal is pointed away from object origin then custom outline generation is used (based on scaling along the origin-vertex vector)
-				//Otherwise the old-school normal vector scaling is used
-				//This way prevents weird artifacts from being created when using either of the methods
 				if (degrees(acos(dot(scaleDir.xyz, v.normal.xyz))) > _Angle) {
 					v.vertex.xyz += normalize(v.normal.xyz) * _SecondOutlineWidth;
-				}
-				else {
+				} else {
 					v.vertex.xyz += scaleDir * _SecondOutlineWidth;
 				}
-
 				v2f o;
 				o.pos = UnityObjectToClipPos(v.vertex);
 				return o;
@@ -121,7 +110,7 @@
 		}
 
 		// Triplanar mapping
-		Tags{ "RenderType" = "Opaque" }
+		Tags { "RenderType" = "Opaque" }
 		CGPROGRAM
 		#pragma surface surf Standard vertex:vert fullforwardshadows addshadow
 		#pragma target 3.0

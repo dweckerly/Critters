@@ -35,9 +35,13 @@ Shader "Custom/Outlined/Regular" {
 
 	ENDCG
 
-	SubShader{
+	SubShader {
+		//This shader consists of 2 ways of generating outline that are dynamically switched based on demiliter angle
+		//If vertex normal is pointed away from object origin then custom outline generation is used (based on scaling along the origin-vertex vector)
+		//Otherwise the old-school normal vector scaling is used
+		//This way prevents weird artifacts from being created when using either of the methods
 		//First outline
-		Pass{
+		Pass {
 			Tags{ "Queue" = "Geometry" }
 			Cull Front
 			CGPROGRAM
@@ -51,15 +55,10 @@ Shader "Custom/Outlined/Regular" {
 
 			v2f vert(appdata v) {
 				appdata original = v;
-
 				float3 scaleDir = normalize(v.vertex.xyz - float4(0,0,0,1));
-				//This shader consists of 2 ways of generating outline that are dynamically switched based on demiliter angle
-				//If vertex normal is pointed away from object origin then custom outline generation is used (based on scaling along the origin-vertex vector)
-				//Otherwise the old-school normal vector scaling is used
-				//This way prevents weird artifacts from being created when using either of the methods
 				if (degrees(acos(dot(scaleDir.xyz, v.normal.xyz))) > _Angle) {
 					v.vertex.xyz += normalize(v.normal.xyz) * _FirstOutlineWidth;
-				}else {
+				} else {
 					v.vertex.xyz += scaleDir * _FirstOutlineWidth;
 				}
 
@@ -73,13 +72,11 @@ Shader "Custom/Outlined/Regular" {
 				color.a = 1;
 				return color;
 			}
-
 			ENDCG
 		}
-		
 
 		//Second outline
-		Pass{
+		Pass {
 			Tags{ "Queue" = "Geometry" }
 			Cull Front
 			CGPROGRAM
@@ -93,22 +90,15 @@ Shader "Custom/Outlined/Regular" {
 
 			v2f vert(appdata v) {
 				appdata original = v;
-
 				float3 scaleDir = normalize(v.vertex.xyz - float4(0,0,0,1));
-				//This shader consists of 2 ways of generating outline that are dynamically switched based on demiliter angle
-				//If vertex normal is pointed away from object origin then custom outline generation is used (based on scaling along the origin-vertex vector)
-				//Otherwise the old-school normal vector scaling is used
-				//This way prevents weird artifacts from being created when using either of the methods
 				if (degrees(acos(dot(scaleDir.xyz, v.normal.xyz))) > _Angle) {
 					v.vertex.xyz += normalize(v.normal.xyz) * _SecondOutlineWidth;
+				} else {
+					v.vertex.xyz += scaleDir * _SecondOutlineWidth;
 				}
-			else {
-				v.vertex.xyz += scaleDir * _SecondOutlineWidth;
-			}
-
-			v2f o;
-			o.pos = UnityObjectToClipPos(v.vertex);
-			return o;
+				v2f o;
+				o.pos = UnityObjectToClipPos(v.vertex);
+				return o;
 			}
 
 			half4 frag(v2f i) : COLOR{
@@ -116,7 +106,6 @@ Shader "Custom/Outlined/Regular" {
 				color.a = 1;
 				return color;
 			}
-
 			ENDCG
 		}
 
