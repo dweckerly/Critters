@@ -59,7 +59,7 @@ public class CritterUIManager : MonoBehaviour
             critterUIObject.index = i;
             critterUIObject.critterSprite.sprite = playerTeam.critters[i].data.critterSprite;
             critterUIObject.critterName.text = playerTeam.critters[i].data.critterName;
-            critterUIObject.hpText.text = playerTeam.critters[i].currentHP + " / " + playerTeam.critters[i].HP.value.ToString();
+            critterUIObject.hpText.text = playerTeam.critters[i].currentHP + " / " + playerTeam.critters[i].STATS["HP"].value.ToString();
             Instantiate(critterUIObject, critterViewParent);
         }
         if (playerTeam.critters.Count > 0) 
@@ -114,41 +114,41 @@ public class CritterUIManager : MonoBehaviour
     void ShowSelectedCritterDetails()
     {
         ClearCritterDetails();
-        critterDetails.critterATK.text = selectedCritter.ATK.value.ToString();
-        if(selectedCritter.ATK.mutation > 1)
+        critterDetails.critterHP.text = selectedCritter.STATS["HP"].value.ToString();
+        if (selectedCritter.STATS["HP"].mutation > 1)
+        {
+            critterDetails.critterHPImages[0].color = mutationUIColor;
+            critterDetails.critterHPImages[1].color = mutationUIColor;
+        }
+        critterDetails.critterATK.text = selectedCritter.STATS["ATK"].value.ToString();
+        if(selectedCritter.STATS["ATK"].mutation > 1)
         {
             critterDetails.critterATKImages[0].color = mutationUIColor;
             critterDetails.critterATKImages[1].color = mutationUIColor;
         }
-        critterDetails.critterDEF.text = selectedCritter.DEF.value.ToString();
-        if (selectedCritter.DEF.mutation > 1)
+        critterDetails.critterDEF.text = selectedCritter.STATS["DEF"].value.ToString();
+        if (selectedCritter.STATS["DEF"].mutation > 1)
         {
             critterDetails.critterDEFImages[0].color = mutationUIColor;
             critterDetails.critterDEFImages[1].color = mutationUIColor;
         }
-        critterDetails.critterSATK.text = selectedCritter.SATK.value.ToString();
-        if (selectedCritter.SATK.mutation > 1)
+        critterDetails.critterSATK.text = selectedCritter.STATS["SATK"].value.ToString();
+        if (selectedCritter.STATS["SATK"].mutation > 1)
         {
             critterDetails.critterSATKImages[0].color = mutationUIColor;
             critterDetails.critterSATKImages[1].color = mutationUIColor;
         }
-        critterDetails.critterSDEF.text = selectedCritter.SDEF.value.ToString();
-        if (selectedCritter.SDEF.mutation > 1)
+        critterDetails.critterSDEF.text = selectedCritter.STATS["SDEF"].value.ToString();
+        if (selectedCritter.STATS["SDEF"].mutation > 1)
         {
             critterDetails.critterSDEFImages[0].color = mutationUIColor;
             critterDetails.critterSDEFImages[1].color = mutationUIColor;
         }
-        critterDetails.critterSPD.text = selectedCritter.SPD.value.ToString();
-        if (selectedCritter.SPD.mutation > 1)
+        critterDetails.critterSPD.text = selectedCritter.STATS["SPD"].value.ToString();
+        if (selectedCritter.STATS["SPD"].mutation > 1)
         {
             critterDetails.critterSPDImages[0].color = mutationUIColor;
             critterDetails.critterSPDImages[1].color = mutationUIColor;
-        }
-        critterDetails.critterHP.text = selectedCritter.HP.value.ToString();
-        if (selectedCritter.HP.mutation > 1)
-        {
-            critterDetails.critterHPImages[0].color = mutationUIColor;
-            critterDetails.critterHPImages[1].color = mutationUIColor;
         }
         critterDetails.critterDescription.text = selectedCritter.data.description;
         critterDetails.critterName.text = selectedCritter.data.critterName;
