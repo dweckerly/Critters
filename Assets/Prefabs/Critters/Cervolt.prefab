@@ -31,10 +31,10 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3118225439299584552}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 1.293, z: 0}
+  m_LocalPosition: {x: 0, y: 2.04, z: 0}
   m_LocalScale: {x: 0.5, y: 0.5, z: 1}
   m_Children:
-  - {fileID: 6970125667411112094}
+  - {fileID: 4654313849141878679}
   - {fileID: 4201065563733219413}
   - {fileID: 8586988788375905246}
   m_Father: {fileID: 0}
@@ -59,8 +59,8 @@ MonoBehaviour:
   critterState: {fileID: 3812783689227432867}
   critterHunger: {fileID: 2748437606257995525}
   critterHealth: {fileID: 7336405325889362996}
-  sprite: {fileID: 6970125667411112094}
-  animator: {fileID: 3656932940488265987}
+  sprite: {fileID: 4654313849141878679}
+  animator: {fileID: 6517120770950263966}
   petPS: {fileID: 0}
   deathPS: {fileID: 5992576610934591687}
   emoteController: {fileID: 2861429866188186282}
@@ -152,7 +152,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8b05a99258fd3aa40957b424c56e8be1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!1 &8083651297463460521
+--- !u!1 &6077278329531575554
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -160,37 +160,37 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 6970125667411112094}
-  - component: {fileID: 8811002353322735678}
-  - component: {fileID: 3656932940488265987}
+  - component: {fileID: 4654313849141878679}
+  - component: {fileID: 2440949706394355543}
+  - component: {fileID: 6517120770950263966}
   m_Layer: 0
-  m_Name: Sprite
-  m_TagString: Critter
+  m_Name: geck
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &6970125667411112094
+--- !u!4 &4654313849141878679
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8083651297463460521}
+  m_GameObject: {fileID: 6077278329531575554}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: 0.05, y: -2.81, z: 0}
+  m_LocalScale: {x: 0.5, y: 0.5, z: 1}
   m_Children: []
   m_Father: {fileID: 6026739815670540508}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!212 &8811002353322735678
+--- !u!212 &2440949706394355543
 SpriteRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8083651297463460521}
+  m_GameObject: {fileID: 6077278329531575554}
   m_Enabled: 1
   m_CastShadows: 0
   m_ReceiveShadows: 0
@@ -199,10 +199,11 @@ SpriteRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_RayTracingMode: 0
+  m_RayTraceProcedural: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: a8597bce07837044cbd95eae45e02c2b, type: 2}
+  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -223,25 +224,25 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: ea0cdcae38249334d82de89a5c3e2fbb, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 36de1169085751a48bad408543630c90, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 5.12, y: 5.12}
+  m_Size: {x: 4.28, y: 4.86}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!95 &3656932940488265987
+--- !u!95 &6517120770950263966
 Animator:
   serializedVersion: 3
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8083651297463460521}
+  m_GameObject: {fileID: 6077278329531575554}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
   m_Controller: {fileID: 9100000, guid: 82c38eab04561c640990892828f93f03, type: 2}
