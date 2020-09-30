@@ -3,103 +3,50 @@
 
 Shader "Custom/Triplanar"
 {
-    Properties
-    {
-        _Color("", Color) = (1, 1, 1, 1)
-        _MainTex("", 2D) = "white" {}
+   	Properties 
+	{
+		_DiffuseMap ("Diffuse Map ", 2D)  = "white" {}
+		_TextureScale ("Texture Scale",float) = 1
+		_TriplanarBlendSharpness ("Blend Sharpness",float) = 1
+	}
+	SubShader 
+	{
+		Tags { "RenderType"="Opaque" }
+		LOD 200
 
-        _Glossiness("", Range(0, 1)) = 0.5
-        [Gamma] _Metallic("", Range(0, 1)) = 0
+		CGPROGRAM
+		#pragma target 3.0
+		#pragma surface surf Lambert
 
-        _BumpScale("", Float) = 1
-        _BumpMap("", 2D) = "bump" {}
+		sampler2D _DiffuseMap;
+		float _TextureScale;
+		float _TriplanarBlendSharpness;
 
-        _OcclusionStrength("", Range(0, 1)) = 1
-        _OcclusionMap("", 2D) = "white" {}
+		struct Input
+		{
+			float3 worldPos;
+			float3 worldNormal;
+		}; 
 
-        _MapScale("", Float) = 1
-    }
-    SubShader
-    {
-        Tags { "RenderType"="Opaque" }
-
-        CGPROGRAM
-
-        #pragma surface surf Standard vertex:vert fullforwardshadows addshadow
-
-        #pragma shader_feature _NORMALMAP
-        #pragma shader_feature _OCCLUSIONMAP
-
-        #pragma target 3.0
-
-        half4 _Color;
-        sampler2D _MainTex;
-
-        half _Glossiness;
-        half _Metallic;
-
-        half _BumpScale;
-        sampler2D _BumpMap;
-
-        half _OcclusionStrength;
-        sampler2D _OcclusionMap;
-
-        half _MapScale;
-
-        struct Input
-        {
-            float3 localCoord;
-            float3 localNormal;
-        };
-
-        void vert(inout appdata_full v, out Input data)
-        {
-            UNITY_INITIALIZE_OUTPUT(Input, data);
-            data.localCoord = v.vertex.xyz;
-            data.localNormal = v.normal.xyz;
-        }
-
-        void surf(Input IN, inout SurfaceOutputStandard o)
-        {
-            // Blending factor of triplanar mapping
-            float3 bf = normalize(abs(IN.localNormal));
-            bf /= dot(bf, (float3)1);
-
-            // Triplanar mapping
-            float2 tx = IN.localCoord.yz * _MapScale;
-            float2 ty = IN.localCoord.zx * _MapScale;
-            float2 tz = IN.localCoord.xy * _MapScale;
-
-            // Base color
-            half4 cx = tex2D(_MainTex, tx) * bf.x;
-            half4 cy = tex2D(_MainTex, ty) * bf.y;
-            half4 cz = tex2D(_MainTex, tz) * bf.z;
-            half4 color = (cx + cy + cz) * _Color;
-            o.Albedo = color.rgb;
-            o.Alpha = color.a;
-
-        #ifdef _NORMALMAP
-            // Normal map
-            half4 nx = tex2D(_BumpMap, tx) * bf.x;
-            half4 ny = tex2D(_BumpMap, ty) * bf.y;
-            half4 nz = tex2D(_BumpMap, tz) * bf.z;
-            o.Normal = UnpackScaleNormal(nx + ny + nz, _BumpScale);
-        #endif
-
-        #ifdef _OCCLUSIONMAP
-            // Occlusion map
-            half ox = tex2D(_OcclusionMap, tx).g * bf.x;
-            half oy = tex2D(_OcclusionMap, ty).g * bf.y;
-            half oz = tex2D(_OcclusionMap, tz).g * bf.z;
-            o.Occlusion = lerp((half4)1, ox + oy + oz, _OcclusionStrength);
-        #endif
-
-            // Misc parameters
-            o.Metallic = _Metallic;
-            o.Smoothness = _Glossiness;
-        }
-        ENDCG
-    }
-    FallBack "Diffuse"
-    CustomEditor "StandardTriplanarInspector"
+		void surf (Input IN, inout SurfaceOutput o) 
+		{
+			// Find our UVs for each axis based on world position of the fragment.
+			half2 yUV = IN.worldPos.xz / _TextureScale;
+			half2 xUV = IN.worldPos.zy / _TextureScale;
+			half2 zUV = IN.worldPos.xy / _TextureScale;
+			// Now do texture samples from our diffuse map with each of the 3 UV set's we've just made.
+			half3 yDiff = tex2D (_DiffuseMap, yUV);
+			half3 xDiff = tex2D (_DiffuseMap, xUV);
+			half3 zDiff = tex2D (_DiffuseMap, zUV);
+			// Get the absolute value of the world normal.
+			// Put the blend weights to the power of BlendSharpness, the higher the value, 
+            // the sharper the transition between the planar maps will be.
+			half3 blendWeights = pow (abs(IN.worldNormal), _TriplanarBlendSharpness);
+			// Divide our blend mask by the sum of it's components, this will make x+y+z=1
+			blendWeights = blendWeights / (blendWeights.x + blendWeights.y + blendWeights.z);
+			// Finally, blend together all three samples based on the blend mask.
+			o.Albedo = xDiff * blendWeights.x + yDiff * blendWeights.y + zDiff * blendWeights.z;
+		}
+		ENDCG
+	}
 }
