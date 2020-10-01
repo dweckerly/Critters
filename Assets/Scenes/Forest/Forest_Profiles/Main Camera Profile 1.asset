@@ -1339,7 +1339,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9e1905ad603bb9a479914accad762e92, type: 3}
   m_Name: EdgeDetect_BeforeTransparent
   m_EditorClassIdentifier: 
-  active: 0
+  active: 1
   enabled:
     overrideState: 1
     value: 1
