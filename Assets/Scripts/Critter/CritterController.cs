@@ -25,15 +25,29 @@ public class CritterController : MonoBehaviour
 
 	float gravity = 10f;
 
+	public bool flying = false;
+
     private void Start()
     {
 		critter = GetComponent<Critter>();
 		controller = GetComponent<CharacterController>();
     }
 
+    private void OnControllerColliderHit(ControllerColliderHit hit)
+    {
+		if (hit.gameObject.tag == "Perimeter")
+		{
+			
+		}
+	}
+
     void CritterMove()
 	{
-		moveDirection.y -= gravity;
+		if(!flying)
+        {
+			moveDirection.y -= gravity;
+		}
+		
 		if (!idle)
         {
 			if(critter == null)
@@ -53,6 +67,16 @@ public class CritterController : MonoBehaviour
 			}
 			controller.Move(moveDirection * Time.deltaTime);
 		}
+	}
+
+	void CritterFlyMove()
+    {
+		if (!critter.animator.GetBool("moving"))
+		{
+			critter.animator.SetBool("moving", true);
+		}
+		moveDirection = moveDirection.normalized * critter.speed;
+		controller.Move(moveDirection * Time.deltaTime);
 	}
 
 	public void MoveAwayFromTarget()
@@ -136,8 +160,8 @@ public class CritterController : MonoBehaviour
 		}
 	}
 
-	public void Wander()
-	{
+	void WanderDirectionCalc()
+    {
 		if (idle)
 		{
 			idle = false;
@@ -145,8 +169,19 @@ public class CritterController : MonoBehaviour
 		CheckDirectionInterval();
 		transform.eulerAngles = Vector3.Slerp(transform.eulerAngles, targetRotation, Time.deltaTime);
 		moveDirection = transform.TransformDirection(Vector3.forward);
+	}
+
+	public void Wander()
+	{
+		WanderDirectionCalc();
 		CritterMove();
 	}
+
+	public void FlyWander()
+    {
+		WanderDirectionCalc();
+		CritterFlyMove();
+    }
 
 	void CheckDirectionInterval()
     {

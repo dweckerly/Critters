@@ -12,27 +12,33 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b8160b753800af248951b051d1a0af14, type: 3}
   m_Name: Gloink
   m_EditorClassIdentifier: 
-  prefab: {fileID: 0}
-  critterSprite: {fileID: 0}
-  critterName: 
-  description: 
+  prefab: {fileID: 7944822296225065612, guid: 8f911e5b65bdd9a4194be5f30cb86f6a, type: 3}
+  critterSprite: {fileID: 21300000, guid: 864d56eb2a9fb384781df65fee645e1a, type: 3}
+  critterName: Gloink
+  description: Floaty boye
   type: 0
   size: 0
-  baseHP: 0
-  baseATK: 0
-  baseDEF: 0
-  baseSATK: 0
-  baseSDEF: 0
-  baseSPD: 0
-  speed: 0
-  health: 0
-  atkDamage: 0
-  atkSpeed: 0
-  dropItem: {fileID: 0}
+  baseHP: 9
+  baseATK: 2
+  baseDEF: 5
+  baseSATK: 6
+  baseSDEF: 6
+  baseSPD: 6
+  speed: 7
+  health: 4
+  atkDamage: 1
+  atkSpeed: 5
+  dropItem: {fileID: 3468000803343008386, guid: 638dd07bf9724424b87aaa7f9cd45392,
+    type: 3}
   activeTimes: 
   critterInteractions: []
-  defaultNormalBehaviour: {fileID: 0}
-  defaultInteractBehaviour: {fileID: 0}
-  defaultEatingBehaviour: {fileID: 0}
-  defaultSleepBehaviour: {fileID: 0}
-  defaultThreatenedBehaviour: {fileID: 0}
+  defaultNormalBehaviour: {fileID: 2351518412137040154, guid: 22c3f63114d5c944eba16d771b16735b,
+    type: 3}
+  defaultInteractBehaviour: {fileID: 3526239116512407378, guid: 22c3f63114d5c944eba16d771b16735b,
+    type: 3}
+  defaultEatingBehaviour: {fileID: -8899004667510002354, guid: 22c3f63114d5c944eba16d771b16735b,
+    type: 3}
+  defaultSleepBehaviour: {fileID: 6057808325782301101, guid: 22c3f63114d5c944eba16d771b16735b,
+    type: 3}
+  defaultThreatenedBehaviour: {fileID: 5949815602845411733, guid: 22c3f63114d5c944eba16d771b16735b,
+    type: 3}

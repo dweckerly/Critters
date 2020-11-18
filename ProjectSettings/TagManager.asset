@@ -11,6 +11,7 @@ TagManager:
   - Ground
   - Item
   - Food
+  - Perimeter
   layers:
   - Default
   - TransparentFX
