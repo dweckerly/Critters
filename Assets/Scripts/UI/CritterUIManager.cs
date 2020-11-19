@@ -17,8 +17,7 @@ public class CritterUIManager : MonoBehaviour
 
     public CritterStats selectedCritter;
 
-    //Color mutationUIColor = new Color(255, 254, 141, 100);
-    Color mutationUIColor = Color.yellow;
+    Color mutationUIColor = new Color(1, 0.99f, 0.553f, 1);
 
     public void Open()
     {
