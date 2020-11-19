@@ -42,6 +42,7 @@ public class CritterStats
     int baseXP = 10;
 
     float mutationFactor = 1.5f;
+    float mutationChance = 40f;
     float scaleFactor;
 
     public CritterStats(CritterData _data, int _level, float _scaleFactor)
@@ -66,12 +67,12 @@ public class CritterStats
 
     void DeterminMutations()
     {
-        STATS["HP"].mutation = Random.Range(0, 100) < 10 ? mutationFactor : 1;
-        STATS["ATK"].mutation = Random.Range(0, 100) < 10 ? mutationFactor : 1;
-        STATS["DEF"].mutation = Random.Range(0, 100) < 10 ? mutationFactor : 1;
-        STATS["SATK"].mutation = Random.Range(0, 100) < 10 ? mutationFactor : 1;
-        STATS["SDEF"].mutation = Random.Range(0, 100) < 10 ? mutationFactor : 1;
-        STATS["SPD"].mutation = Random.Range(0, 100) < 10 ? mutationFactor : 1;
+        STATS["HP"].mutation = Random.Range(0, 100) < mutationChance ? mutationFactor : 1;
+        STATS["ATK"].mutation = Random.Range(0, 100) < mutationChance ? mutationFactor : 1;
+        STATS["DEF"].mutation = Random.Range(0, 100) < mutationChance ? mutationFactor : 1;
+        STATS["SATK"].mutation = Random.Range(0, 100) < mutationChance ? mutationFactor : 1;
+        STATS["SDEF"].mutation = Random.Range(0, 100) < mutationChance ? mutationFactor : 1;
+        STATS["SPD"].mutation = Random.Range(0, 100) < mutationChance ? mutationFactor : 1;
     }
 
     void SetScaleFactor()

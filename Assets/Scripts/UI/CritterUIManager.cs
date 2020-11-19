@@ -17,7 +17,8 @@ public class CritterUIManager : MonoBehaviour
 
     public CritterStats selectedCritter;
 
-    Color mutationUIColor = new Color(255, 254, 141, 100);
+    //Color mutationUIColor = new Color(255, 254, 141, 100);
+    Color mutationUIColor = Color.yellow;
 
     public void Open()
     {
@@ -161,6 +162,7 @@ public class CritterUIManager : MonoBehaviour
         critterDetails.critterDescription.text = selectedCritter.data.description;
         critterDetails.critterName.text = selectedCritter.data.critterName;
         critterDetails.critterImage.sprite = selectedCritter.data.critterSprite;
+        critterDetails.critterImage.rectTransform.localScale = new Vector3(1, 1, 1) * selectedCritter.STATS["HP"].scaleFactor;
         critterDetails.critterLevel.text = "Level : " + selectedCritter.level;
         critterDetails.critterXP.text = "XP : " + selectedCritter.XP.ToString() + " / " + selectedCritter.nextLevelXP.ToString();
     }
