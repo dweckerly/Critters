@@ -31,6 +31,14 @@ public class CritterUIManager : MonoBehaviour
         }
     }
 
+    public void Close()
+    {
+        if (critterPanel.activeSelf)
+        {
+            CloseCritterPanel();
+        }
+    }
+
     void OpenCritterPanel()
     {
         PopulatePlayerTeamView();

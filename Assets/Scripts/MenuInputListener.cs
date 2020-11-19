@@ -4,19 +4,23 @@ using UnityEngine.Events;
 public class MenuInputListener : MonoBehaviour
 {
     public PlayerInput playerInput;
-    public UnityEvent inventoryUIEvent;
-    public UnityEvent critterUIEvent;
+    public UnityEvent inventoryUIOpenEvent;
+    public UnityEvent critterUIOpenEvent;
+    public UnityEvent inventoryUICloseEvent;
+    public UnityEvent critterUICloseEvent;
 
     private void Update()
     {
         if (playerInput.BackPackButton())
         {
-            inventoryUIEvent.Invoke();
+            critterUICloseEvent.Invoke();
+            inventoryUIOpenEvent.Invoke();
         }
 
         if(playerInput.CritterButton())
         {
-            critterUIEvent.Invoke();
+            inventoryUICloseEvent.Invoke();
+            critterUIOpenEvent.Invoke();
         }
     }
 }

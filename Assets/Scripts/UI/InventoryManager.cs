@@ -32,6 +32,14 @@ public class InventoryManager : MonoBehaviour
         }
     }
 
+    public void Close()
+    {
+        if (inventoryPanel.activeSelf)
+        {
+            CloseInventoryPanel();
+        }
+    }
+
     void OpenInventoryPanel()
     {
         PopulateInventory();

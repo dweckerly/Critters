@@ -2,6 +2,12 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+[RequireComponent(typeof(CharacterController))]
+[RequireComponent(typeof(CritterController))]
+[RequireComponent(typeof(CritterBehaviourController))]
+[RequireComponent(typeof(CritterState))]
+[RequireComponent(typeof(CritterHunger))]
+[RequireComponent(typeof(CritterHealth))]
 public class Critter : MonoBehaviour
 {
     public CritterData data;
